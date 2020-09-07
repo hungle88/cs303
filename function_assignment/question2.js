@@ -6,5 +6,7 @@ if (a < b) {
 
 }
 
-console.log(min(2, 3));
+alert(min(2, 5));
+alert(min(3, -1));
+alert(min(1, 1));
 
