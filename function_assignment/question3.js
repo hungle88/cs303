@@ -11,5 +11,5 @@ return Math.pow(x, n);
 
 }
 
-alert(pow(x, n));
+console.log(pow(x, n));
 
