@@ -1,4 +1,3 @@
-const prompt = require("prompt-sync")();
 let x = parseInt(prompt("Please enter x: "));
 let n = parseInt(prompt("Please enter n: "));
 function pow(x,n) {
