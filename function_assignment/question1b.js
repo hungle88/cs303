@@ -6,4 +6,4 @@ function checkAge(age){
    return (age > 18) || confirm('Did your parents allow you?');
 }
 
-console.log(checkAge());
+alert(checkAge());
