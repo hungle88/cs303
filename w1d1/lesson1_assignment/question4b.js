@@ -1,5 +1,5 @@
 function reverseArrayInPlace(arr){
-    let half_length = Math.round((arr.length-1)/2);
+    let half_length = Math.floor((arr.length-1)/2);
     let temp = 0;
     
     for (let i = 0; i <= half_length; i++) {
