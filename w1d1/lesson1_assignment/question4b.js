@@ -21,4 +21,4 @@ function reverseArrayInPlace(arr){
     
     let arr =[1, 2, 3, 4, 5];
     let output = reverseArrayInPlace(arr);
-    alert(output);
+    alert(output)
