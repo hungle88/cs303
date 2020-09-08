@@ -1,4 +1,3 @@
-const prompt = require("prompt-sync")();
 function sumInput() {
     let arr = [];
     while (true) {
