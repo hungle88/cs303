@@ -22,4 +22,4 @@ let sum = 0;
     }
 
 
-console.log(sumInput());
+alert(sumInput());
