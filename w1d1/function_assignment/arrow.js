@@ -4,8 +4,8 @@ else no();
 }
 ask(
 "Do you agree?",
-() => Console.log("you agreed."),
-() => Console.log("You canceled the execution")
+() => alert("you agreed."),
+() => alert("You canceled the execution")
 
 )
 
