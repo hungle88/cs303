@@ -11,4 +11,4 @@ return output;
 
 }
 
-console.log(sum([1, 2, 3, 4]));
+alert(sum([1, 2, 3, 4]));

@@ -11,4 +11,4 @@ function multiply(arr) {
     
     }
     
-    console.log(multiply([1, 2, 3, 4]));
+    alert(multiply([1, 2, 3, 4]));

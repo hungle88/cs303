@@ -7,4 +7,4 @@ return Math.max(...word_length_arr);
 
 let arr = ["hello", "hi", "bye"];
 let output = findLongestWord(arr);
-console.log(output);
+alert(output);
