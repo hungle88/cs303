@@ -2,17 +2,21 @@
 /* global filterLongWords assert  */
 describe("filterLongWords", function () {
 
-    it("words longer than 5 is morning afternoon", function () {
+    it("words longer than 5 are morning afternoon", function () {
         let result = ["morning", "afternoon"];
-        assert.equal(result, filterLongWords(["morning", "afternoon", "bye", "love"], 5));
+        assert.deepEqual(result, filterLongWords(["morning", "afternoon", "bye", "love"], 5));
     });
 
-    it("words longer than 4 is apple", function () {
-        assert.equal("apple", filterLongWords(["apple", "hi", "hey"], 4));
+    it("words longer than 4 are apple orange", function () {
+        let result = ["apple", "orange"];
+
+        assert.deepEqual(result, filterLongWords(["apple", "orange", "hi", "hey"], 4));
     });
 
-    it("words longer than 3 is hello", function () {
-        assert.equal("hello", filterLongWords(["hello", "bye", "hi"], 3));
+    it("words longer than 3 are hello goodbye", function () {
+        let result = ["hello", "goodbye"];
+
+        assert.deepEqual(result, filterLongWords(["hello", "goodbye", "bye", "hi"], 3));
     });
 
 
