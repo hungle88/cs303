@@ -16,8 +16,6 @@ return new_arr;
 }
 
 
-
-'use strict';
 /**
  * 
  * @param {string} str is a word or a phrase
