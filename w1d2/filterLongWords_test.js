@@ -3,7 +3,7 @@
 describe("filterLongWords", function () {
 
     it("words longer than 5 is morning", function () {
-        assert.equal("morning", filterLongWords(["morning", "bye", "love"], 5));
+        assert.equal(["morning", "afternoon"], filterLongWords(["morning", "afternoon", "bye", "love"], 5));
     });
 
     it("words longer than 4 is apple", function () {
