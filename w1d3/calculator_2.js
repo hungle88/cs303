@@ -21,5 +21,5 @@ function Calculator() {
 let calculator = new Calculator();
 calculator.read();
 
-console.log("Sum=" + calculator.sum());
-console.log("Mul=" + calculator.multiply());
+alert("Sum=" + calculator.sum());
+alert("Mul=" + calculator.multiply());

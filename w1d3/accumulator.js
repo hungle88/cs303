@@ -15,4 +15,4 @@ function Accumulator(startingValue) {
 let accumulator = new Accumulator(1);
 accumulator.read();
 accumulator.read();
-console.log(accumulator.value);
+alert(accumulator.value);
