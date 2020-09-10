@@ -1,5 +1,3 @@
-const prompt = require("prompt-sync")();
-
 let calculator = {
 read: function(){
 
@@ -22,5 +20,5 @@ multiply: function(){
 }
 
 calculator.read();
-console.log(calculator.sum());
-console.log(calculator.multiply());
+alert(calculator.sum());
+alert(calculator.multiply());
