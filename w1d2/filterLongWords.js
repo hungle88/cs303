@@ -15,7 +15,7 @@ return new_arr;
 
 }
 
-let arr =["morning", "afternoon", "bye", "love"]
-let i = 5;
-let output = filterLongWords(arr, i);
-console.log(output);
+// let arr =["morning", "afternoon", "bye", "love"]
+// let i = 5;
+// let output = filterLongWords(arr, i);
+// console.log(output);
