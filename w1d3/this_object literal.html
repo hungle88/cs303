@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using "this" in object literal</title>
+</head>
+<body>
+    Here the function makeUser returns an object.<br/>
+
+What is the result of accessing its ref? Why?<br/>
+<code>
+function makeUser() {<br/>
+  return {<br/>
+    name: "John",<br/>
+    ref: this<br/>
+  };<br/>
+};<br/>
+<br/>
+let user = makeUser();<br/>
+<br/>
+alert( user.ref.name ); // What's the result?<br/>
+</code>
+
+the result is error because the value of this inside makeUser() is undefined, makeUser os called as a function.
+</body>
+</html>
