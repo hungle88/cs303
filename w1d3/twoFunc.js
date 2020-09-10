@@ -1,10 +1,18 @@
-let obj ={}
+/* eslint-disable id-length */
+"use strict";
 
+let obj ={};
 
+/**
+ * @returns {object} an object.
+ */
 function A() {
     return obj;
 
 }
+/**
+ * @returns {object} an object.
+ */
 function B() {
     return obj;
 
