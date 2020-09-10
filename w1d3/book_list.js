@@ -23,9 +23,14 @@ function addBook(){
 
 
 function showTitles(){
-    for(let books of library){
+    let allTitles =""
+    for(let i = 0; i < library.length; i++){
+        allTitles += library[i].title;
+    }
     let textArea = document.getElementById("information");
-    textArea.innerHTML = books.title;
-}}
+    textArea.innerHTML = allTitles;
+
+}
+
 
 
