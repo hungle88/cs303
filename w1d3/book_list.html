@@ -17,11 +17,13 @@
         <p><label for="lib_id">Library ID:</label><br />
         <input type="text" id="new_id" name="lib_id" size="104"><br /></p>
 
-        <p><button onclick="addBook()">Add book to library</button>
-            <button onclick="showTitle()">Show titles</button>
-            <button>Show authors</button>
-            <button>Show IDs</button><br /></p>
-        <textarea name="information" rows="10" cols="90"></textarea><br>
+        <p>
+            <input type="button" value="Add books" id="new_books" onclick="showTitles();"/>
+            <input type="button" value="Show titles" id="new_titles" onclick="showTitles();"/>
+            <input type="button" value="Show authors" id="new_authors" onclick="showTitles();"/>
+            <input type="button" value="Show IDs" id="new_IDs" onclick="showTitles();"/></p>
+        <textarea id="information" rows="10" cols="90"></textarea><br/>
+        <div id="test"></div>
 
 
 

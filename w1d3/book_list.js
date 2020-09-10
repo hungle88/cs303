@@ -21,11 +21,11 @@ function addBook(){
 
 }
 
-function showTitle(){
-    let test = "Test";
-document.getElementById("information").innerHTML = test;
-
-
+let test = "Test";
+function showTitles(){
+    
+    let textArea = document.getElementById("information");
+    textArea.innerHTML = library;
 }
 
-console.log(library);
+
