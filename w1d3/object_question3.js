@@ -10,4 +10,4 @@ for (let key in salaries) {
 }
 
 
-alert(sum);
+console.log(sum);

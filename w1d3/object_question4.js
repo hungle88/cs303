@@ -21,4 +21,4 @@ let menu = {
 
 let output = multiplyNumeric(menu);
 
-alert(output);
+console.log(output);

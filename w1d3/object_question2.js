@@ -13,4 +13,4 @@ let obj = {};
 
 let output = isEmpty(obj);
 
-alert(output);
+console.log(output);
