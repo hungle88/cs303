@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 "use strict";
 
 let library = [
@@ -9,7 +11,10 @@ let library = [
     libraryID: 3245,
   },
 ];
-
+/**This function new books to the library
+ * 
+ * @returns{object} return and add a new object to the library
+ */
 function addBooks() {
   let book = {};
   book.title = document.getElementById("new_title").value;
@@ -18,7 +23,10 @@ function addBooks() {
 
   library.push(book);
 }
-
+/**This function show titles of the books
+ * 
+ * @returns{string} show the title of the books to the html page
+ */
 function showTitles() {
   let allTitles = "";
   for (let i = 0; i < library.length; i++) {
@@ -29,7 +37,10 @@ function showTitles() {
   let textArea = document.getElementById("information");
   textArea.innerHTML = allTitles;
 }
-
+/**This function show authors of the books
+ * 
+ * @returns{string} show the authors of the books to the html page
+ */
 function showAuthors() {
   let allAuthors = "";
   for (let i = 0; i < library.length; i++) {
@@ -40,7 +51,10 @@ function showAuthors() {
   let textArea = document.getElementById("information");
   textArea.innerHTML = allAuthors;
 }
-
+/**This function show titles of the books
+ * 
+ * @returns{number} show the ID of the books to the html page
+ */
 function showID() {
   let allID = "";
   for (let i = 0; i < library.length; i++) {
