@@ -46,7 +46,7 @@ function showTitles() {
     return 0;
   });
   for (let j = 0; j < tempArr.length; j++) {
-    let newLine = "\n";
+    let newLine = "\r\n";
     allTitles += tempArr[j];
     allTitles += newLine;
   }
@@ -76,7 +76,7 @@ function showAuthors() {
     return 0;
   });
   for (let j = 0; j < tempArr.length; j++) {
-    let newLine = "\n";
+    let newLine = "\r\n";
     allAuthors += tempArr[j];
     allAuthors += newLine;
   }
@@ -106,7 +106,7 @@ function showID() {
     return 0;
   });
   for (let j = 0; j < tempArr.length; j++) {
-    let newLine = "\n";
+    let newLine = "\r\n";
     allID += tempArr[j];
     allID += newLine;
   }
