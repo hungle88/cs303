@@ -1,8 +1,9 @@
 "use strict";
+const prompt = require("prompt-sync")();
 /**
  *
  * @param {number} startingValue is the beginning number that will be used to add to other later input numbers
- * @return {number} the total sume of the beginning number with all the input numbers
+ * @return {number} the total sum of the beginning number with all the input numbers
  */
 function Accumulator(startingValue) {
   this.value = startingValue;

@@ -114,3 +114,36 @@ function showID() {
   let textArea = document.getElementById("information");
   textArea.innerHTML = allID;
 }
+
+/**This function scramble the book titles
+ *
+ * @returns{string} show the scrambled book titles to the html page
+ */
+function scramble() {
+  let allTitles = "";
+  let tempArr = [];
+  for (let i = 0; i < library.length; i++) {
+    tempArr[i] = library[i].title;
+  }
+  tempArr.sort(function (a, b) {
+    let x = a.toLowerCase();
+    let y = b.toLowerCase();
+    if (x < y) {
+      return -1;
+    }
+    if (y < x) {
+      return 1;
+    }
+    return 0;
+  });
+  tempArr = tempArr.join("");
+  tempArr = tempArr.split("");
+  for (let j = 0; j < tempArr.length; j++) {
+    let newLine = "\r\n";
+    allTitles += tempArr[j];
+    allTitles += newLine;
+  }
+
+  let textArea = document.getElementById("information");
+  textArea.innerHTML = allTitles;
+}
