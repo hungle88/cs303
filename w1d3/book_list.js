@@ -155,18 +155,16 @@ function scramble() {
   let maxLength = wordsLength[wordsLength.length - 1];
 
   let scrambledTitle = [];
-for(let k = 0; k <= maxLength; k++){
-  let j = 0;
-for(let i = 0; i < allTitles.length; i++) {
-  if(allTitles[i] === k) {
-    scrambledTitle[j] = allTitles[i];
-    j++;
-
+  for (let k = 0; k <= maxLength; k++) {
+    let j = 0;
+    for (let i = 0; i < allTitles.length; i++) {
+      if (allTitles[i] === k) {
+        scrambledTitle[j] = allTitles[i];
+        j++;
+      }
+    }
+    // console.log(scrambledTitle);
   }
-  
-}
-// console.log(scrambledTitle);
-}
   // let textArea = document.getElementById("information");
   // textArea.innerHTML = allTitles;
 }
