@@ -12,7 +12,7 @@ let library = [
   },
 ];
 /**This function new books to the library
- * 
+ *
  * @returns{object} return and add a new object to the library
  */
 function addBooks() {
@@ -24,44 +24,62 @@ function addBooks() {
   library.push(book);
 }
 /**This function show titles of the books
- * 
+ *
  * @returns{string} show the title of the books to the html page
  */
 function showTitles() {
-  let allTitles = "";
-  for (let i = 0; i < library.length; i++) {
-    let newLine = "\r\n";
-    allTitles += library[i].title;
-    allTitles += newLine;
-  }
-  let textArea = document.getElementById("information");
-  textArea.innerHTML = allTitles;
+    let allTitles = "";
+    let tempArr =[];
+    for (let i = 0; i < library.length; i++) {
+  tempArr[i] = library[i].title;
+    }
+    tempArr.sort();
+    for(let j = 0; j < tempArr.length; j++){
+      let newLine = "\r\n";
+      allTitles += tempArr[j];
+      allTitles += newLine;
+    }
+    
+    let textArea = document.getElementById("information");
+    textArea.innerHTML = allTitles;
 }
 /**This function show authors of the books
- * 
+ *
  * @returns{string} show the authors of the books to the html page
  */
 function showAuthors() {
   let allAuthors = "";
+  let tempArr =[];
   for (let i = 0; i < library.length; i++) {
+tempArr[i] = library[i].author;
+  }
+  tempArr.sort();
+  for(let j = 0; j < tempArr.length; j++){
     let newLine = "\r\n";
-    allAuthors += library[i].author;
+    allAuthors += tempArr[j];
     allAuthors += newLine;
   }
+  
   let textArea = document.getElementById("information");
   textArea.innerHTML = allAuthors;
 }
 /**This function show titles of the books
- * 
+ *
  * @returns{number} show the ID of the books to the html page
  */
 function showID() {
-  let allID = "";
-  for (let i = 0; i < library.length; i++) {
-    let newLine = "\r\n";
-    allID += library[i].libraryID;
-    allID += newLine;
-  }
-  let textArea = document.getElementById("information");
-  textArea.innerHTML = allID;
+    let allID = "";
+    let tempArr =[];
+    for (let i = 0; i < library.length; i++) {
+  tempArr[i] = library[i].libraryID;
+    }
+    tempArr.sort();
+    for(let j = 0; j < tempArr.length; j++){
+      let newLine = "\r\n";
+      allID += tempArr[j];
+      allID += newLine;
+    }
+    
+    let textArea = document.getElementById("information");
+    textArea.innerHTML = allID;
 }
