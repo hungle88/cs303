@@ -144,27 +144,24 @@ function scramble() {
     allTitles = allTitles + space;
   }
   allTitles = allTitles.trim();
-  console.log(allTitles);
+  // console.log(allTitles);
 
   allTitles = allTitles.split(" ");
-  console.log(allTitles);
+  // console.log(allTitles);
   let wordsLength = allTitles.map((words) => words.length);
   wordsLength = wordsLength.sort((a, b) => a - b);
-  console.log(wordsLength);
+  // console.log(wordsLength);
 
   let maxLength = wordsLength[wordsLength.length - 1];
 
   let scrambledTitle = [];
   for (let k = 0; k <= maxLength; k++) {
-    let j = 0;
-    for (let i = 0; i < allTitles.length; i++) {
-      if (allTitles[i] === k) {
-        scrambledTitle[j] = allTitles[i];
-        j++;
-      }
-    }
-    // console.log(scrambledTitle);
+
+scrambledTitle = allTitles.filter(words => words.length === k);
+console.log(scrambledTitle);
+
   }
+
   // let textArea = document.getElementById("information");
   // textArea.innerHTML = allTitles;
 }
