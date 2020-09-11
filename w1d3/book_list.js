@@ -34,7 +34,7 @@ function showTitles() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].title;
   }
-  tempArr.sort(function(a, b) {
+  tempArr.sort(function (a, b) {
     let x = a.toLowerCase();
     let y = b.toLowerCase();
     if (x < y) {
@@ -44,8 +44,7 @@ function showTitles() {
       return 1;
     }
     return 0;
-  }
-  );
+  });
   for (let j = 0; j < tempArr.length; j++) {
     let newLine = "\r\n";
     allTitles += tempArr[j];
@@ -65,7 +64,7 @@ function showAuthors() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].author;
   }
-  tempArr.sort(function(a, b) {
+  tempArr.sort(function (a, b) {
     let x = a.toLowerCase();
     let y = b.toLowerCase();
     if (x < y) {
@@ -95,7 +94,7 @@ function showID() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].libraryID;
   }
-  tempArr.sort(function(a, b) {
+  tempArr.sort(function (a, b) {
     let x = +a;
     let y = +b;
     if (x < y) {
