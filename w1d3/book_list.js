@@ -95,7 +95,17 @@ function showID() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].libraryID;
   }
-  tempArr.sort();
+  tempArr.sort(function(a, b) {
+    let x = +a;
+    let y = +b;
+    if (x < y) {
+      return -1;
+    }
+    if (y < x) {
+      return 1;
+    }
+    return 0;
+  });
   for (let j = 0; j < tempArr.length; j++) {
     let newLine = "\r\n";
     allID += tempArr[j];
