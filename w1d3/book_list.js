@@ -154,12 +154,12 @@ function scramble() {
 }
 
 /** This function sorts the titles aplphabetically and ignore upper case and lower case
- * 
+ *
  * @param {string} a is a string value that needs to be sorted alphabettically
  * @param {string} b is a string value that needs to be sorted alphabettically
  * @return {boolean} return the result of the sorting
  */
-function alphabetSort (a, b) {
+function alphabetSort(a, b) {
   let x = a.toLowerCase();
   let y = b.toLowerCase();
   if (x < y) {
@@ -170,4 +170,3 @@ function alphabetSort (a, b) {
   }
   return 0;
 }
-

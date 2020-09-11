@@ -34,7 +34,18 @@ function showTitles() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].title;
   }
-  tempArr.sort(alphabetSort);
+  tempArr.sort(function (a, b) {
+    //this function sorts the authors aplphabetically and ignore upper case and lower case
+    let x = a.toLowerCase();
+    let y = b.toLowerCase();
+    if (x < y) {
+      return -1;
+    }
+    if (y < x) {
+      return 1;
+    }
+    return 0;
+  });
   for (let j = 0; j < tempArr.length; j++) {
     let newLine = "\r\n";
     allTitles += tempArr[j];
@@ -164,21 +175,20 @@ function scramble() {
   textArea.innerHTML = scrambledTitles;
 }
 
-/** This function sorts the titles aplphabetically and ignore upper case and lower case
- * 
- * @param {string} a is a string value that needs to be sorted alphabettically
- * @param {string} b is a string value that needs to be sorted alphabettically
- * @return {boolean} return the result of the sorting
- */
-function alphabetSort (a, b) {
-  let x = a.toLowerCase();
-  let y = b.toLowerCase();
-  if (x < y) {
-    return -1;
-  }
-  if (y < x) {
-    return 1;
-  }
-  return 0;
-}
-
+// /** This function sorts the titles aplphabetically and ignore upper case and lower case
+//  *
+//  * @param {string} a is a string value that needs to be sorted alphabettically
+//  * @param {string} b is a string value that needs to be sorted alphabettically
+//  * @return {boolean} return the result of the sorting
+//  */
+// function alphabetSort (a, b) {
+//   let x = a.toLowerCase();
+//   let y = b.toLowerCase();
+//   if (x < y) {
+//     return -1;
+//   }
+//   if (y < x) {
+//     return 1;
+//   }
+//   return 0;
+// }
