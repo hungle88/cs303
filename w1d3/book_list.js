@@ -153,7 +153,7 @@ function scramble() {
   textArea.innerHTML = scrambledTitles;
 }
 
-/** This function sorts the titles aplphabetically and ignore upper case and lower case
+/** This function sorts the string values aplphabetically and ignore upper case and lower case
  *
  * @param {string} a is a string value that needs to be sorted alphabettically
  * @param {string} b is a string value that needs to be sorted alphabettically
