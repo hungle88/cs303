@@ -157,7 +157,7 @@ function scramble() {
  *
  * @param {string} a is a string value that needs to be sorted alphabettically
  * @param {string} b is a string value that needs to be sorted alphabettically
- * @return {boolean} return the result of the sorting
+ * @return {number} return the result of the sorting
  */
 function alphabetSort(a, b) {
   let x = a.toLowerCase();
