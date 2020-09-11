@@ -146,7 +146,7 @@ function scramble() {
   console.log(allTitles);
 
   allTitles = allTitles.split(" ");
-  // console.log(allTitles);
+  console.log(allTitles);
   let wordsLength = allTitles.map((words) => words.length);
   wordsLength = wordsLength.sort((a, b) => a - b);
 
@@ -154,7 +154,7 @@ function scramble() {
 
   let scrambledTitle = "";
 for(let k = 0; k <= maxLength; k++){
-scrambledTitle = allTitles.filter(length => length === k);
+scrambledTitle = allTitles.filter(words => words.length === k);
 console.log(scrambledTitle);
   
 }
