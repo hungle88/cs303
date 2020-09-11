@@ -11,7 +11,7 @@ let library = [
     libraryID: 3245,
   },
 ];
-/**This function new books to the library
+/**This function add new books to the library
  *
  * @returns{object} return and add a new object to the library
  */
@@ -23,9 +23,9 @@ function addBooks() {
 
   library.push(book);
 }
-/**This function show titles of the books
+/**This function show titles of the books sorted alphabetically
  *
- * @returns{string} show the title of the books to the html page
+ * @returns{string} show the title of the books to the html page sorted alphabetically
  */
 function showTitles() {
     let allTitles = "";
@@ -43,9 +43,9 @@ function showTitles() {
     let textArea = document.getElementById("information");
     textArea.innerHTML = allTitles;
 }
-/**This function show authors of the books
+/**This function show authors of the books sorted alphabetically
  *
- * @returns{string} show the authors of the books to the html page
+ * @returns{string} show the authors of the books to the html page sorted alphabetically
  */
 function showAuthors() {
   let allAuthors = "";
@@ -63,9 +63,9 @@ tempArr[i] = library[i].author;
   let textArea = document.getElementById("information");
   textArea.innerHTML = allAuthors;
 }
-/**This function show titles of the books
+/**This function show library ID of the books, sorted
  *
- * @returns{number} show the ID of the books to the html page
+ * @returns{number} show the sorted ID of the books to the html page
  */
 function showID() {
     let allID = "";
