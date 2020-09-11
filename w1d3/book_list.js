@@ -136,14 +136,30 @@ function scramble() {
     }
     return 0;
   });
-  tempArr = tempArr.join("");
-  tempArr = tempArr.split("");
-  for (let j = 0; j < tempArr.length; j++) {
-    let newLine = "\r\n";
-    allTitles += tempArr[j];
-    allTitles += newLine;
-  }
 
-  let textArea = document.getElementById("information");
-  textArea.innerHTML = allTitles;
+  for (let j = 0; j < tempArr.length; j++) {
+    let space = " ";
+
+    allTitles += tempArr[j];
+    allTitles = allTitles + space;
+  }
+  console.log(allTitles);
+
+  allTitles = allTitles.split(" ");
+  // console.log(allTitles);
+  let wordsLength = allTitles.map((words) => words.length);
+  wordsLength = wordsLength.sort((a, b) => a - b);
+
+  let maxLength = wordsLength[wordsLength.length - 1];
+
+  let scrambledTitle = "";
+for(let k = 0; k <= maxLength; k++){
+scrambledTitle = allTitles.filter(length => length === k);
+console.log(scrambledTitle);
+  
 }
+  // let textArea = document.getElementById("information");
+  // textArea.innerHTML = allTitles;
+}
+
+console.log(scramble());
