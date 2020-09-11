@@ -51,7 +51,7 @@ function showTitles() {
     allTitles += tempArr[j];
     allTitles += newLine;
   }
-  allTitles = allTitles.trim();
+  allTitles = allTitles.trim(); //trim all the space in allTitles
   let textArea = document.getElementById("information");
   textArea.innerHTML = allTitles;
 }
@@ -82,7 +82,7 @@ function showAuthors() {
     allAuthors += tempArr[j];
     allAuthors += newLine;
   }
-  allAuthors = allAuthors.trim();
+  allAuthors = allAuthors.trim(); //trim all the space in allAuthors
   let textArea = document.getElementById("information");
   textArea.innerHTML = allAuthors;
 }
@@ -110,6 +110,7 @@ function showID() {
   });
   for (let j = 0; j < tempArr.length; j++) {
     if (tempArr[j] !== 0) {
+      //When the user enter an empty the ID still count as 0, this will remove all that 0 id
       let newLine = "\r\n";
       allID += tempArr[j];
       allID += newLine;
