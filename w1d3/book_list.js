@@ -35,6 +35,7 @@ function showTitles() {
     tempArr[i] = library[i].title;
   }
   tempArr.sort(function (a, b) {
+    //this function sorts the titles aplphabetically and ignore upper case and lower case
     let x = a.toLowerCase();
     let y = b.toLowerCase();
     if (x < y) {
@@ -65,6 +66,7 @@ function showAuthors() {
     tempArr[i] = library[i].author;
   }
   tempArr.sort(function (a, b) {
+    //this function sorts the authors aplphabetically and ignore upper case and lower case
     let x = a.toLowerCase();
     let y = b.toLowerCase();
     if (x < y) {
@@ -95,6 +97,7 @@ function showID() {
     tempArr[i] = library[i].libraryID;
   }
   tempArr.sort(function (a, b) {
+    //this function convert library id into number sorts the id from small to large
     let x = +a;
     let y = +b;
     if (x < y) {
@@ -126,6 +129,7 @@ function scramble() {
     tempArr[i] = library[i].title;
   }
   tempArr.sort(function (a, b) {
+    //this function sorts the titles aplphabetically and ignore upper case and lower case
     let x = a.toLowerCase();
     let y = b.toLowerCase();
     if (x < y) {
@@ -143,30 +147,29 @@ function scramble() {
     allTitles += tempArr[j];
     allTitles = allTitles + space;
   }
-  allTitles = allTitles.trim();
+  allTitles = allTitles.trim(); // trim all the space of allTitles
 
-  allTitles = allTitles.split(" ");
-  let wordsLength = allTitles.map((words) => words.length);
+  allTitles = allTitles.split(" "); // convert allTitles into an array of words
+  let wordsLength = allTitles.map((words) => words.length); // create a new array that contains the value of word's length
   wordsLength = wordsLength.sort((a, b) => a - b);
   wordsLength = wordsLength.filter(
-    (value, index) => wordsLength.indexOf(value) === index
+    (value, index) => wordsLength.indexOf(value) === index // remove all the duplicate value inside the array
   );
-  let maxLength = wordsLength[wordsLength.length - 1];
 
-  let scrambledTitle = [];
-  let output = "";
+  let sameWordLength = [];
+  let scrambledTitles = "";
   for (let i = 0; i < wordsLength.length; i++) {
-    scrambledTitle = allTitles.filter(
-      (words) => words.length === wordsLength[i]
+    sameWordLength = allTitles.filter(
+      (words) => words.length === wordsLength[i] //create new arrays that contain all the words that have the same word length
     );
-    output += scrambledTitle.join(" ");
-    output = output + "\r\n";
+    scrambledTitles += sameWordLength.join(" "); //convert all the same word length arrays into a string
+    scrambledTitles = scrambledTitles + "\r\n";
   }
 
-  console.log(output);
+  console.log(scrambledTitles);
 
   let textArea = document.getElementById("information");
-  textArea.innerHTML = output;
+  textArea.innerHTML = scrambledTitles;
 }
 
 console.log(scramble());
