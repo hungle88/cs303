@@ -10,13 +10,12 @@ let library = [
   },
 ];
 
-function addBook(){
+function addBooks(){
+let book = {};
+  book.title = document.getElementById("new_title").value;
+  book.author = document.getElementById("new_author").value;
+  book.libraryID = document.getElementById("new_id").value;
 
-  let title = document.getElementById("new_title").value;
-  let author = document.getElementById("new_author").value;
-  let libraryID = document.getElementById("new_id").value;
-
-  let book = new book(title, author, libraryID);
   library.push(book);
 
 }
