@@ -34,5 +34,27 @@ function showTitles(){
 
 }
 
+function showAuthors(){
+    let allAuthors =""
+    for(let i = 0; i < library.length; i++){
+        let newLine ="\r\n";
+        allAuthors += library[i].author;
+        allAuthors += newLine;
+    }
+    let textArea = document.getElementById("information");
+    textArea.innerHTML = allAuthors;
 
+}
+
+function showID(){
+    let allID =""
+    for(let i = 0; i < library.length; i++){
+        let newLine ="\r\n";
+        allID += library[i].libraryID;
+        allID += newLine;
+    }
+    let textArea = document.getElementById("information");
+    textArea.innerHTML = allID;
+
+}
 
