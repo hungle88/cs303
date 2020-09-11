@@ -156,10 +156,8 @@ function scramble() {
 
   let scrambledTitle = [];
   for (let k = 0; k <= maxLength; k++) {
-
-scrambledTitle = allTitles.filter(words => words.length === k);
-console.log(scrambledTitle);
-
+    scrambledTitle = allTitles.filter((words) => words.length === k);
+    console.log(scrambledTitle);
   }
 
   // let textArea = document.getElementById("information");
