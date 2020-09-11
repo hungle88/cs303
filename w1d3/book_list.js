@@ -51,7 +51,7 @@ function showTitles() {
     allTitles += tempArr[j];
     allTitles += newLine;
   }
-
+  allTitles = allTitles.trim();
   let textArea = document.getElementById("information");
   textArea.innerHTML = allTitles;
 }
@@ -82,7 +82,7 @@ function showAuthors() {
     allAuthors += tempArr[j];
     allAuthors += newLine;
   }
-
+  allAuthors = allAuthors.trim();
   let textArea = document.getElementById("information");
   textArea.innerHTML = allAuthors;
 }
@@ -109,9 +109,11 @@ function showID() {
     return 0;
   });
   for (let j = 0; j < tempArr.length; j++) {
-    let newLine = "\r\n";
-    allID += tempArr[j];
-    allID += newLine;
+    if (tempArr[j] !== 0) {
+      let newLine = "\r\n";
+      allID += tempArr[j];
+      allID += newLine;
+    }
   }
 
   let textArea = document.getElementById("information");
