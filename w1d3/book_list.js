@@ -1,3 +1,4 @@
+/* eslint-disable id-length */
 /* eslint-disable no-unused-vars */
 
 "use strict";
@@ -33,7 +34,18 @@ function showTitles() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].title;
   }
-  tempArr.sort();
+  tempArr.sort(function(a, b) {
+    let x = a.toLowerCase();
+    let y = b.toLowerCase();
+    if (x < y) {
+      return -1;
+    }
+    if (y < x) {
+      return 1;
+    }
+    return 0;
+  }
+  );
   for (let j = 0; j < tempArr.length; j++) {
     let newLine = "\r\n";
     allTitles += tempArr[j];
@@ -53,7 +65,17 @@ function showAuthors() {
   for (let i = 0; i < library.length; i++) {
     tempArr[i] = library[i].author;
   }
-  tempArr.sort();
+  tempArr.sort(function(a, b) {
+    let x = a.toLowerCase();
+    let y = b.toLowerCase();
+    if (x < y) {
+      return -1;
+    }
+    if (y < x) {
+      return 1;
+    }
+    return 0;
+  });
   for (let j = 0; j < tempArr.length; j++) {
     let newLine = "\r\n";
     allAuthors += tempArr[j];
