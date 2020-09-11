@@ -26,7 +26,7 @@ function addBooks() {
 }
 /**This function show titles of the books sorted alphabetically
  *
- * @returns{string} show the title of the books to the html page sorted alphabetically
+ * @returns{string} display the title of the books to the html page sorted alphabetically
  */
 function showTitles() {
   let allTitles = "";
@@ -57,7 +57,7 @@ function showTitles() {
 }
 /**This function show authors of the books sorted alphabetically
  *
- * @returns{string} show the authors of the books to the html page sorted alphabetically
+ * @returns{string} display the authors of the books to the html page sorted alphabetically
  */
 function showAuthors() {
   let allAuthors = "";
@@ -88,7 +88,7 @@ function showAuthors() {
 }
 /**This function show library ID of the books, sorted
  *
- * @returns{number} show the sorted ID of the books to the html page
+ * @returns{number} display the sorted ID of the books to the html page
  */
 function showID() {
   let allID = "";
@@ -120,7 +120,7 @@ function showID() {
 
 /**This function scramble the book titles
  *
- * @returns{string} show the scrambled book titles to the html page
+ * @returns{string} display the scrambled book titles to the html page
  */
 function scramble() {
   let allTitles = "";
