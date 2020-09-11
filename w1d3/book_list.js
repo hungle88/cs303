@@ -110,7 +110,7 @@ function showID() {
   });
   for (let j = 0; j < tempArr.length; j++) {
     if (tempArr[j] !== 0) {
-      //When the user enter an empty the ID still count as 0, this will remove all that 0 id
+      //When the user enter an empty author or book title the library ID still count as 0, this will remove all that 0 library ID
       let newLine = "\r\n";
       allID += tempArr[j];
       allID += newLine;
