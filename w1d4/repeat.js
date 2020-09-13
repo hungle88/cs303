@@ -15,4 +15,4 @@ function readNumber() {
     return +num;
   }
 }
-console.log(readNumber());
+alert(readNumber());
