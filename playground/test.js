@@ -1,7 +1,13 @@
-// "use strict";
+"use strict";
 
-function something() {
-    let x = 5;
-    return this;
-}
-console.log(something());
+let obj ={
+
+color: "red",
+height: 5,
+
+};
+
+obj.width = 4;
+
+console.log(obj);
+
