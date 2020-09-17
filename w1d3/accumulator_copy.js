@@ -12,7 +12,22 @@ function Accumulator(startingValue) {
   };
 }
 
+// eslint-disable-next-line no-unused-vars
 let accumulator = new Accumulator(1);
-accumulator.read();
-accumulator.read();
-alert(accumulator.value);
+
+// "use strict";
+
+// let calculator = {
+//   sum() {
+//     return this.a + this.b;
+//   },
+
+//   mul() {
+//     return this.a * this.b;
+//   },
+
+//   read() {
+//     this.a = +prompt("a?", 0);
+//     this.b = +prompt("b?", 0);
+//   },
+// };
