@@ -16,7 +16,7 @@ describe("camelize", function() {
       assert.equal(camelize("list-style-image"), "listStyleImage");
     });
   
-    it("turns-webkit-transition into WebkitTransition", function() {
+    it("turns -webkit-transition into WebkitTransition", function() {
       assert.equal(camelize("-webkit-transition"), "WebkitTransition");
     });
   
