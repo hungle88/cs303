@@ -17,6 +17,6 @@ function checkSpam(str) {
 
 let str = "xXxxx hello";
 // let str ="hello how are you";
-// let str ="buy viAgRA noW";
+// let str_ ="buy viAgRA noW";
 
 console.log(checkSpam(str));

@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 /* global randomInteger assert  */
 describe("randomInteger", function () {
   it("the random integer is 1", function () {
