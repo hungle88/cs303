@@ -16,5 +16,3 @@ return output;
 }
 
 
-let rand =randomInteger(1, 5);
-console.log(rand);
