@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 "use strict";
 
 /* global checkSpam assert  */
