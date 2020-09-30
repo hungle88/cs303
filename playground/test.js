@@ -1,6 +1,19 @@
-let arr =["i", "you", "we"];
-let arr2 = ["hate", "love", "like"];
+function valueMap(arr){
 
-let output = (arr, arr2) => arr[arr2.item] = arr2;
+return arr.age;
+    
+    }
+    
+    
+    
+        function max(arr){
 
-console.log(output);
+            let maxValue = Math.max(...arr);
+            
+            return maxValue;
+            
+            }
+    
+    abc = [{age:1}, {age:2}, {age:33} ];
+    
+    console.log(abc.map(valueMap).reduce(max, 0));
