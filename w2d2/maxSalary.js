@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-inner-declarations */
 "use strict";
 {
