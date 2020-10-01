@@ -66,17 +66,16 @@ function maxAge(arr) {
 }
 
 function averageAge(arr) {
-  return arr.reduce((a, b) => a + b.age, 0)/arr.length;
+  return arr.reduce((a, b) => a + b.age, 0) / arr.length;
 }
 
 function oddAge(arr) {
-  return arr.filter(item => item.age % 2 !==0);
+  return arr.filter((item) => item.age % 2 !== 0);
 }
 
 function evenAge(arr) {
-  return arr.filter(item => item.age % 2 ===0);
+  return arr.filter((item) => item.age % 2 === 0);
 }
-
 
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
@@ -93,3 +92,5 @@ console.log(maxAge(peopleArray));
 console.log(averageAge(peopleArray));
 console.log(oddAge(peopleArray));
 console.log(evenAge(peopleArray));
+console.log(peopleArray.filter((item) => item.age % 2 !== 0).reduce((a, b) => a + b.age, 0));
+console.log(peopleArray.filter((item) => item.age % 2 === 0).reduce((a, b) => a + b.age, 0));
