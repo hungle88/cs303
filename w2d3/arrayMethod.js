@@ -91,10 +91,17 @@ function even(num) {
 }
 
 function average(...a) {
+  // console.log(a);
   let sum = a[a.length - 1].reduce((a, b) => a + b);
   let averageValue = sum / a[a.length - 1].length;
   return averageValue;
 }
+
+// function average(...a) {
+// a.forEach(el => console.log(el));
+
+// }
+
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
 console.log(evenNumber(numArray));
