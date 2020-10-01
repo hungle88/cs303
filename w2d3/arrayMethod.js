@@ -88,7 +88,7 @@ function odd(num) {
 
 function average(num) {
   let temp = 0;
-  let count = 0;
+  let count = 1;
   return temp += num/++count;
 }
 console.log(doubleNumber(numArray));
