@@ -1,5 +1,10 @@
+/* eslint-disable id-length */
 "use strict";
-
+/**
+ * 
+ * @param {number} n is the ordinal number of fibonacci 
+ * @return {number} is the fibonacci number.  
+ */
 function fib(n) {
   if (n === 1 || n === 2) {
     return 1;

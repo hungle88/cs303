@@ -1,18 +1,9 @@
 "use strict";
-
-// function printListReverse(list) {
-//   let arr = [];
-//   let temp = list;
-
-//   while (temp) {
-//     arr.unshift(temp.value);
-//     temp = temp.next;
-//   }
-//   for (let number of arr) {
-//     console.log(number);
-//   }
-// }
-
+/**Recursive solution
+ * 
+ * @param {object} list is a list of value.
+ * @returns {number} value of the list.
+ */
 function printListReverse(list) {
   if (list.next) {
     printListReverse(list.next);
