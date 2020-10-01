@@ -57,6 +57,19 @@ function sumNumber(arr) {
 function averageNumber(arr) {
   return arr.reduce((a, b) => (a + b))/arr.length;
 }
+
+function maxNum(arr) {
+
+  return arr.reduce((a, b) => Math.max(a, b));
+}
+
+
+function maxAge(arr) {
+  return arr.reduce((a, b) => (a.age > b.age) ? a : b);
+}
+
+
+
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
 console.log(evenNumber(numArray));
@@ -67,3 +80,5 @@ console.log(findAge(peopleArray));
 // console.log(includeAge(peopleArray));
 console.log(sumNumber(numArray));
 console.log(averageNumber(numArray));
+console.log(maxNum(numArray));
+console.log(maxAge(peopleArray));
