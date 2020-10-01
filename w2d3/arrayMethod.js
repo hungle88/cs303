@@ -81,6 +81,7 @@ console.log(evenNumber(numArray));
 console.log(filterAge(peopleArray));
 console.log(findEven(numArray));
 console.log(findAge(peopleArray));
+
 console.log(sumNumber(numArray));
 console.log(averageNumber(numArray));
 console.log(maxNum(numArray));
