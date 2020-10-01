@@ -50,24 +50,32 @@ function includeAge(arr) {
 }
 
 function sumNumber(arr) {
-
-  return arr.reduce((a, b) => a + b)
+  return arr.reduce((a, b) => a + b);
 }
 
 function averageNumber(arr) {
-  return arr.reduce((a, b) => (a + b))/arr.length;
+  return arr.reduce((a, b) => a + b) / arr.length;
 }
 
 function maxNum(arr) {
-
   return arr.reduce((a, b) => Math.max(a, b));
 }
 
-
 function maxAge(arr) {
-  return arr.reduce((a, b) => (a.age > b.age) ? a : b);
+  return arr.reduce((a, b) => (a.age > b.age ? a : b));
 }
 
+function averageAge(arr) {
+  return arr.reduce((a, b) => a + b.age, 0)/arr.length;
+}
+
+function oddAge(arr) {
+  return arr.filter(item => item.age % 2 !==0);
+}
+
+function evenAge(arr) {
+  return arr.filter(item => item.age % 2 ===0);
+}
 
 
 console.log(doubleNumber(numArray));
@@ -82,3 +90,6 @@ console.log(sumNumber(numArray));
 console.log(averageNumber(numArray));
 console.log(maxNum(numArray));
 console.log(maxAge(peopleArray));
+console.log(averageAge(peopleArray));
+console.log(oddAge(peopleArray));
+console.log(evenAge(peopleArray));
