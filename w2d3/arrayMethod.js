@@ -69,10 +69,35 @@ function even(num) {
   if (num % 2 === 0) return num;
 }
 
-function average(...a) {
-  let sum = a[a.length - 1].reduce((a, b) => a + b);
-  let averageValue = sum / a[a.length - 1].length;
-  return averageValue;
+
+function oddCounter(arr) {
+  let ageArr = arr.map(ageValue);
+  let oddArr = [];
+  let j = 0;
+  for (let i = 0; i < ageArr.length; i++) {
+    if (ageArr[i] % 2 !== 0) {
+      oddArr[j] = ageArr[i];
+      j++;
+    }
+  }
+  return oddArr.length;
+}
+
+function evenCounter(arr) {
+  let ageArr = arr.map(ageValue);
+  let evenArr = [];
+  let j = 0;
+  for (let i = 0; i < ageArr.length; i++) {
+    if (ageArr[i] % 2 !== 0) {
+      evenArr[j] = ageArr[i];
+      j++;
+    }
+  }
+  return evenArr.length;
+}
+
+function sum(a, b) {
+  return a + b;
 }
 
 console.log(doubleNumber(numArray));
@@ -87,5 +112,6 @@ console.log(averageNumber(numArray));
 console.log(maxNum(numArray));
 console.log(maxAge(peopleArray));
 
-console.log(peopleArray.map(ageValue).filter(odd).reduce(average, 0));
-console.log(peopleArray.map(ageValue).filter(even).reduce(average, 0));
+
+console.log(peopleArray.map(ageValue).filter(odd).reduce(sum)/oddCounter(peopleArray));
+console.log(peopleArray.map(ageValue).filter(even).reduce(sum)/evenCounter(peopleArray));

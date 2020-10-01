@@ -1,19 +1,19 @@
-function valueMap(arr){
+let arr1 =[1, 2, 3, 4, 5];
 
-return arr.age;
-    
+function even(arr){
+
+    let newArr=[];
+    let j = 0;
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 0) {
+
+            newArr[j] = arr[i];
+            j++;
+        }
     }
-    
-    
-    
-        function max(arr){
+    return newArr;
+}
 
-            let maxValue = Math.max(...arr);
-            
-            return maxValue;
-            
-            }
-    
-    abc = [{age:1}, {age:2}, {age:33} ];
-    
-    console.log(abc.map(valueMap).reduce(max, 0));
+let output = even(arr1);
+console.log(output);
