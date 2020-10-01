@@ -65,18 +65,32 @@ function maxAge(arr) {
   return arr.reduce((a, b) => (a.age > b.age ? a : b));
 }
 
-function averageAge(arr) {
-  return arr.reduce((a, b) => a + b.age, 0) / arr.length;
+// function averageAge(arr) {
+//   return arr.reduce((a, b) => a + b.age, 0) / arr.length;
+// }
+
+// function oddAge(arr) {
+//   return arr.filter((item) => item.age % 2 !== 0);
+ 
+// }
+
+// function evenAge(arr) {
+//   return arr.filter((item) => item.age % 2 === 0);
+// }
+
+function ageValue(arr) {
+  return arr.age;
 }
 
-function oddAge(arr) {
-  return arr.filter((item) => item.age % 2 !== 0);
+function odd(num) {
+  if(num % 2 !==0) return num;
 }
 
-function evenAge(arr) {
-  return arr.filter((item) => item.age % 2 === 0);
+function average(num) {
+  let arr =[];
+  arr.push(num);
+  return arr[i]/arr.length;
 }
-
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
 console.log(evenNumber(numArray));
@@ -89,8 +103,8 @@ console.log(sumNumber(numArray));
 console.log(averageNumber(numArray));
 console.log(maxNum(numArray));
 console.log(maxAge(peopleArray));
-console.log(averageAge(peopleArray));
-console.log(oddAge(peopleArray));
-console.log(evenAge(peopleArray));
-console.log(peopleArray.filter((item) => item.age % 2 !== 0).reduce((a, b) => a + b.age, 0));
-console.log(peopleArray.filter((item) => item.age % 2 === 0).reduce((a, b) => a + b.age, 0));
+// console.log(averageAge(peopleArray));
+// console.log(oddAge(peopleArray));
+// console.log(evenAge(peopleArray));
+
+console.log(peopleArray.map(ageValue).filter(odd).reduce(average, 0));
