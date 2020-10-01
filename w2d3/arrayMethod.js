@@ -9,8 +9,10 @@ const peopleArray = [
 ];
 
 function doubleNumber(arr) {
-  return arr.map((item) => item * 2);
+  return arr.map((n) => n * 2);
 }
+
+console.log(doubleNumber(numArray));
 
 function doubleAge(arr) {
   let output = arr.map((item) => {
@@ -25,7 +27,22 @@ function doubleAge(arr) {
   return output;
 }
 
-console.log(peopleArray);
-
-console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
+
+function evenNumber(arr) {
+  return arr.filter((n) => n % 2 === 0);
+}
+
+console.log(evenNumber(numArray));
+
+function filterAge(arr) {
+  return arr.filter((n) => n.age > 10);
+}
+
+console.log(filterAge(peopleArray));
+
+function findEven(arr) {
+  return arr.find((n) => n % 2 === 0);
+}
+
+console.log(findEven(numArray));
