@@ -86,10 +86,13 @@ function odd(num) {
   if (num % 2 !== 0) return num;
 }
 
+function even(num) {
+  if (num % 2 === 0) return num;
+}
+
 function average(...a) {
   let sum = a[a.length - 1].reduce((a, b) => a + b);
   let averageValue = sum / a[a.length - 1].length;
-  console.log(averageValue);
   return averageValue;
 }
 console.log(doubleNumber(numArray));
@@ -106,3 +109,5 @@ console.log(maxNum(numArray));
 console.log(maxAge(peopleArray));
 
 console.log(peopleArray.map(ageValue).filter(odd).reduce(average, 0));
+console.log(peopleArray.map(ageValue).filter(even).reduce(average, 0));
+
