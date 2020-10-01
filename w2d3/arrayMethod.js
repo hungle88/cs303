@@ -87,7 +87,7 @@ function odd(num) {
 }
 
 function average(num) {
-  return (a + b)/++console;
+  return (a + b)/++c;
 }
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
