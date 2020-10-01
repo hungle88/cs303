@@ -41,14 +41,6 @@ function findAge(arr) {
   return arr.find((n) => n.age > 10);
 }
 
-// function includeEven(arr) {
-//   return arr.include(n % 2 === 0);
-// }
-
-function includeAge(arr) {
-  return arr.include(age > 10);
-}
-
 function sumNumber(arr) {
   return arr.reduce((a, b) => a + b);
 }
@@ -65,19 +57,6 @@ function maxAge(arr) {
   return arr.reduce((a, b) => (a.age > b.age ? a : b));
 }
 
-// function averageAge(arr) {
-//   return arr.reduce((a, b) => a + b.age, 0) / arr.length;
-// }
-
-// function oddAge(arr) {
-//   return arr.filter((item) => item.age % 2 !== 0);
-
-// }
-
-// function evenAge(arr) {
-//   return arr.filter((item) => item.age % 2 === 0);
-// }
-
 function ageValue(arr) {
   return arr.age;
 }
@@ -91,16 +70,10 @@ function even(num) {
 }
 
 function average(...a) {
-  // console.log(a);
   let sum = a[a.length - 1].reduce((a, b) => a + b);
   let averageValue = sum / a[a.length - 1].length;
   return averageValue;
 }
-
-// function average(...a) {
-// a.forEach(el => console.log(el));
-
-// }
 
 console.log(doubleNumber(numArray));
 console.log(doubleAge(peopleArray));
@@ -108,8 +81,6 @@ console.log(evenNumber(numArray));
 console.log(filterAge(peopleArray));
 console.log(findEven(numArray));
 console.log(findAge(peopleArray));
-// console.log(includeEven(numArray));
-// console.log(includeAge(peopleArray));
 console.log(sumNumber(numArray));
 console.log(averageNumber(numArray));
 console.log(maxNum(numArray));
@@ -117,4 +88,3 @@ console.log(maxAge(peopleArray));
 
 console.log(peopleArray.map(ageValue).filter(odd).reduce(average, 0));
 console.log(peopleArray.map(ageValue).filter(even).reduce(average, 0));
-
