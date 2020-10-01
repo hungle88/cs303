@@ -38,7 +38,11 @@ function findEven(arr) {
 }
 
 
+function findAge(arr) {
 
+return arr.find(n => n.age > 10)
+
+}
 
 
 
@@ -47,3 +51,4 @@ console.log(doubleNumber(numArray));
 console.log(evenNumber(numArray));
 console.log(filterAge(peopleArray));
 console.log(findEven(numArray));
+console.log(findAge(peopleArray));
