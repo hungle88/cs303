@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 "use strict";
-/**Using a for loop
+/**Sum all numbers till the given one - Using a for loop
  *
  * @param {number} n is the input number.
  * @returns {numner} return sum from 1 to the input number.

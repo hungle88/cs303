@@ -1,5 +1,5 @@
 "use strict";
-/**Loop-based solution
+/**Output a single-linked list - Loop-based solution
  * 
  * @param {object} list is a list of value.
  * @returns {number} value of the list.

@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 "use strict";
-/**
+/**Fibonacci numbers
  * 
  * @param {number} n is the ordinal number of fibonacci 
  * @return {number} is the fibonacci number.  

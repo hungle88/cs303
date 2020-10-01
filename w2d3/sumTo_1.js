@@ -1,7 +1,7 @@
 /* eslint-disable id-length */
 "use strict";
 
-/**Using the arithmetic progression formula.
+/**Sum all numbers till the given one - Using the arithmetic progression formula.
  *
  * @param {number} n is the input number.
  * @returns {numner} return sum from 1 to the input number.

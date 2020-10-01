@@ -1,5 +1,5 @@
 "use strict";
-/**Recursive solution
+/**Output a single-linked list - Recursive solution
  * 
  * @param {object} list is a list of value.
  * @returns {number} value of the list.

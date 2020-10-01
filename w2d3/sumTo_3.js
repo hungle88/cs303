@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 "use strict";
-/**Using a recursion.
+/**Sum all numbers till the given one - Using a recursion.
  *
  * @param {number} n is the input number.
  * @returns {numner} return sum from 1 to the input number.
