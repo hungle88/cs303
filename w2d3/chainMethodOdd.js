@@ -62,7 +62,14 @@
     function sum(a, b) {
       return a + b;
     }
-    return arr.map(ageValue).filter(odd).reduce(sum, 0) / oddCounter(arr);
+
+
+
+    return arr.map(ageValue).filter(odd).reduce(sum, 0) / oddCounter(arr); //using the chain of map filter reduce to find the average age of people with odd ages
+  
+  
+  
+  
   }
 
   console.log(chainMethodOdd(peopleArray));

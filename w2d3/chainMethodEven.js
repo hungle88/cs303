@@ -62,8 +62,16 @@
     function sum(a, b) {
       return a + b;
     }
-    return arr.map(ageValue).filter(even).reduce(sum, 0) / evenCounter(arr);
-  }
+
+
+
+
+
+    return arr.map(ageValue).filter(even).reduce(sum, 0) / evenCounter(arr);//using the chain of map filter reduce to find the average age of people with even ages
+  
+
+
+}
 
   console.log(chainMethodEven(peopleArray));
 
