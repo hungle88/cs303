@@ -221,3 +221,13 @@ console.log(findListNode(abel, "Lisa"));
 console.log("findListNode should be Homer node: ");
 console.log(findListNode(abel, "Homer"));
 console.log("findListNode should be null: " + findListNode(abel, "Crusty"));
+
+function printList(node) {
+    console.log(node.value);
+  
+    if (node.descendents) {
+      printList(node.descendents);
+    }
+  }
+
+console.log(printList(TreeNode));
