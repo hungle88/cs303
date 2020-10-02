@@ -1,3 +1,5 @@
+/* eslint-disable id-length */
+/* eslint-disable require-jsdoc */
 "use strict";
 
 const numArray = [5, 0, 7, 77, -20, 300, 51, 2];
