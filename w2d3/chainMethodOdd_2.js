@@ -9,7 +9,6 @@
     { name: "William", age: 6 },
     { name: "Lucy", age: 13 },
     { name: "Barney", age: 80 },
-    { name: "Ben", age: 11 },
   ];
 
   /**
@@ -59,11 +58,11 @@ return newArr[newArr.length-1].reduce((a, b) => a+b)/ newArr[newArr.length-1].le
   /* global chainMethod assert  */
 
   describe("chainMethodOdd", function () {
-    it("return the average age of odd age values = 13", function () {
-      let arr = [{ name: "a", age: 15 }, { name: "b", age: 6 }, { name: "c", age: 13 }, {name: "d", age: 80 }, {name: "e", age: 11}];
+    it("return the average age of odd age values = 14", function () {
+      let arr = [{ name: "a", age: 15 }, { name: "b", age: 6 }, { name: "c", age: 13 }, {name: "d", age: 80 },];
 
       let output = chainMethodOdd(arr);
-      assert.equal(output, 13);
+      assert.equal(output, 14);
     });
   });
 }
