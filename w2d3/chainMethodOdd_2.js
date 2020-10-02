@@ -9,6 +9,7 @@
     { name: "William", age: 6 },
     { name: "Lucy", age: 13 },
     { name: "Barney", age: 80 },
+    { name: "Ben", age: 11 },
   ];
 
   /**
@@ -43,15 +44,6 @@ return newArr[newArr.length-1].reduce((a, b) => a+b)/ newArr[newArr.length-1].le
 
     }
 
-    /**
-     *
-     * @param {number} a is the first number
-     * @param {number} b  is the second number
-     * @returns {number} the sum of a and b
-     */
-    function sum(a, b) {
-      return a + b;
-    }
 
 
 
@@ -67,11 +59,11 @@ return newArr[newArr.length-1].reduce((a, b) => a+b)/ newArr[newArr.length-1].le
   /* global chainMethod assert  */
 
   describe("chainMethodOdd", function () {
-    it("return the average age of odd age values = 14", function () {
-      let arr = [{ name: "a", age: 15 }, { name: "b", age: 6 }, { name: "c", age: 13 }, {name: "d", age: 80 }];
+    it("return the average age of odd age values = 13", function () {
+      let arr = [{ name: "a", age: 15 }, { name: "b", age: 6 }, { name: "c", age: 13 }, {name: "d", age: 80 }, {name: "e", age: 11}];
 
       let output = chainMethodOdd(arr);
-      assert.equal(output, 14);
+      assert.equal(output, 13);
     });
   });
 }
