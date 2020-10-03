@@ -9,7 +9,6 @@
     { name: "William", age: 6 },
     { name: "Lucy", age: 13 },
     { name: "Barney", age: 80 },
-
   ];
 
   /**
@@ -38,7 +37,7 @@
 
     /**
      * calculate the average value
-     * @param  {...any} arr 
+     * @param  {...any} arr
      */
     function average(...arr) {
       let newArr = [...arr];
