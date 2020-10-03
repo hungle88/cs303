@@ -34,23 +34,21 @@
     function even(num) {
       if (num % 2 === 0) return num;
     }
-
-    function average(...arr){
+    /**
+     * calculate the average value
+     * @param  {...any} arr
+     */
+    function average(...arr) {
       let newArr = [...arr];
       console.log(newArr);
-      return newArr[newArr.length-1].reduce((a, b) => a+b)/ newArr[newArr.length-1].length;
-
-   
+      return (
+        newArr[newArr.length - 1].reduce((a, b) => a + b) /
+        newArr[newArr.length - 1].length
+      );
     }
 
-
-
-    return arr.map(ageValue).filter(even).reduce(average,0);//using the chain of map filter reduce to find the average age of people with even ages
-  
-
-
-}
-  
+    return arr.map(ageValue).filter(even).reduce(average, 0); //using the chain of map filter reduce to find the average age of people with even ages
+  }
 
   console.log(chainMethodEven(peopleArray));
 
@@ -58,10 +56,27 @@
 
   describe("chainMethodEven", function () {
     it("return the average age of even age values = 43", function () {
-      let arr = [{ name: "a", age: 15 }, { name: "b", age: 6 }, { name: "c", age: 13 }, {name: "d", age: 80 }];
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+      ];
 
       let output = chainMethodEven(arr);
       assert.equal(output, 43);
+    });
+    it("return the average age of even age values = 36", function () {
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+        { name: "e", age: 22 },
+      ];
+
+      let output = chainMethodEven(arr);
+      assert.equal(output, 36);
     });
   });
 }
