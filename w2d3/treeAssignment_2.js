@@ -43,8 +43,8 @@ function treeFind(node, target) {
   return false;
 }
 
-console.log("should be true for Lisa:", treeFind(abe, "Lisa"));
-console.log("should be false for Crusty:", treeFind(abe, "Crusty"));
+console.log(treeFind(abe, "Lisa"));
+console.log(treeFind(abe, "Ben"));
 
 function findSubtree(node, target) {
   if (node.value === target) {
