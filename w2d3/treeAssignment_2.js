@@ -55,9 +55,8 @@ function findSubtree(node, target) {
   } else {
     let childNodes = node.descendents;
     for (let anode of childNodes) {
-      const foundNode = findSubtree(anode, target);
-      if (foundNode) {
-        return foundNode;
+      if (findSubtree(anode, target)) {
+        return findSubtree(anode, target);
       }
     }
   }
