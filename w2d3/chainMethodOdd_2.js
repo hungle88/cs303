@@ -42,10 +42,7 @@
     function average(...arr) {
       let newArr = arr.pop();
       console.log(newArr);
-      return (
-        newArr.reduce((a, b) => a + b) /
-        newArr.length
-      );
+      return newArr.reduce((a, b) => a + b) / newArr.length;
     }
 
     return arr.map(ageValue).filter(odd).reduce(average, 0); //using the chain of map filter reduce to find the average age of people with odd ages
