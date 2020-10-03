@@ -40,11 +40,11 @@
      * @param  {...any} arr
      */
     function average(...arr) {
-      let newArr = [...arr];
+      let newArr = arr.pop();
       console.log(newArr);
       return (
-        newArr[newArr.length - 1].reduce((a, b) => a + b) /
-        newArr[newArr.length - 1].length
+        newArr.reduce((a, b) => a + b) /
+        newArr.length
       );
     }
 
