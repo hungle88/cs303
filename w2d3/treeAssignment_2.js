@@ -64,8 +64,8 @@ function findSubtree(node, target) {
   return null;
 }
 
-console.log("should return Lisa node: ", findSubtree(abe, "Lisa"));
-console.log("should return null: ", findSubtree(abe, "Crusty"));
+console.log(findSubtree(abe, "Lisa"));
+console.log(findSubtree(abe, "Ben"));
 
 class ListNode {
   constructor(value, link) {
