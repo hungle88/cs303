@@ -113,6 +113,5 @@ function addStars(node) {
   node.value = "***" + node.value + "***";
 }
 
-const abeClone = JSON.parse(JSON.stringify(abe));
-treeModifier(abeClone, addStars);
-treeWalk(abeClone);
+treeModifier(abe, addStars);
+treeWalk(abe);
