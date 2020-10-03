@@ -50,7 +50,7 @@
 
   console.log(chainMethodEven(peopleArray));
 
-  /* global chainMethod assert  */
+  /* global chainMethodEven assert  */
 
   describe("chainMethodEven", function () {
     it("return the average age of even age values = 43", function () {
@@ -75,6 +75,34 @@
 
       let output = chainMethodEven(arr);
       assert.equal(output, 36);
+    });
+
+    it("return the average age of even age values = 28", function () {
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+        { name: "e", age: 22 },
+        { name: "f", age: 4 },
+      ];
+
+      let output = chainMethodEven(arr);
+      assert.equal(output, 28);
+    });
+    it("return the average age of even age values = 25.2", function () {
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+        { name: "e", age: 22 },
+        { name: "f", age: 4 },
+        { name: "f", age: 14 },
+      ];
+
+      let output = chainMethodEven(arr);
+      assert.equal(output, 25.2);
     });
   });
 }

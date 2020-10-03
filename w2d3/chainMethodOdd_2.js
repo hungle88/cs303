@@ -51,7 +51,7 @@
 
   console.log(chainMethodOdd(peopleArray));
 
-  /* global chainMethod assert  */
+  /* global chainMethodOdd assert  */
 
   describe("chainMethodOdd", function () {
     it("return the average age of odd age values = 14", function () {
@@ -77,6 +77,34 @@
 
       let output = chainMethodOdd(arr);
       assert.equal(output, 13);
+    });
+    it("return the average age of odd age values = 12", function () {
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+        { name: "e", age: 11 },
+        { name: "f", age: 9 },
+      ];
+
+      let output = chainMethodOdd(arr);
+      assert.equal(output, 12);
+    });
+
+    it("return the average age of odd age values = 14.6", function () {
+      let arr = [
+        { name: "a", age: 15 },
+        { name: "b", age: 6 },
+        { name: "c", age: 13 },
+        { name: "d", age: 80 },
+        { name: "e", age: 11 },
+        { name: "f", age: 9 },
+        { name: "f", age: 25 },
+      ];
+
+      let output = chainMethodOdd(arr);
+      assert.equal(output, 14.6);
     });
   });
 }
