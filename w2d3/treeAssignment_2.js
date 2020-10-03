@@ -21,7 +21,7 @@ function treeWalk(node) {
   console.log(node.value);
   let childNodes = node.descendents;
   if (childNodes) {
-    childNodes.forEach(treeWalk); //loop through all children
+    childNodes.forEach(treeWalk); 
   }
 }
 treeWalk(abe);
