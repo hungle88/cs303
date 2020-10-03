@@ -115,3 +115,4 @@ function addStars(node) {
 
 treeModifier(abe, addStars);
 treeWalk(abe);
+console.log(lisa.descendents.length);
