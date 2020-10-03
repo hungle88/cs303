@@ -17,6 +17,8 @@ const maggie = new TreeNode("Maggie");
 abe.descendents.push(homer);
 homer.descendents.push(bart, lisa, maggie);
 
+console.log(lisa);
+
 function treeWalk(node) {
   console.log(node.value);
   let childNodes = node.descendents;
