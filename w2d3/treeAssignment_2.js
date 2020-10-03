@@ -94,11 +94,9 @@ function findListNode(node, target) {
   return null;
 }
 
-console.log("findListNode should be Lisa node: ");
 console.log(findListNode(abel, "Lisa"));
-console.log("findListNode should be Homer node: ");
 console.log(findListNode(abel, "Homer"));
-console.log("findListNode should be null: " + findListNode(abel, "Crusty"));
+console.log(findListNode(abel, "Ben"));
 
 function treeModifier(node, modifierFunc) {
   modifierFunc(node);
