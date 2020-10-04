@@ -111,10 +111,12 @@ function addStars(node) {
 function upperCase(node) {
   node.value = node.value.toUpperCase();
 }
-function upperCase(node) {
+function reverse(node) {
   node.value = node.value.split("").reverse().join("");
 }
 treeModifier(abe, addStars);
 treeWalk(abe);
 treeModifier(abe, upperCase);
+treeWalk(abe);
+treeModifier(abe, reverse);
 treeWalk(abe);
