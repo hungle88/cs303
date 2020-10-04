@@ -1,7 +1,12 @@
-/* eslint-disable require-jsdoc */
 "use strict";
-
+/**
+ * class constructor used to create simple tree data structure for the exercises
+ */
 class TreeNode {
+      /**
+     * 
+     * @param {string} value to be set for value property of object
+     */
   constructor(value) {
     this.value = value;
     this.descendents = [];
@@ -19,6 +24,11 @@ homer.descendents.push(bart, lisa, maggie);
 
 console.log(lisa);
 
+/**
+ *  1. recurses through tree and logs the value of each node to console
+ * @param {object} node is the root of a tree
+ * @returns {undefined} by default
+ */
 function treeWalk(node) {
   console.log(node.value);
   let childNodes = node.descendents;
@@ -28,6 +38,12 @@ function treeWalk(node) {
 }
 treeWalk(abe);
 
+/**
+ * 2. Searches through tree until find the target as the value of a node
+ * @param {object} node that is the root of a tree or subtree
+ * @param {string} target value that i am searching for in the tree
+ * @returns {boolean} true if the target is in the tree, else false
+ */
 function contains(node, target) {
   if (node.value === target) {
     return true;
@@ -48,6 +64,12 @@ function contains(node, target) {
 console.log(contains(abe, "Lisa"));
 console.log(contains(abe, "Ben"));
 
+/**
+ * 3. Searches through tree until find the target as the value of a node and returns the node
+ * @param {object} node that is the root of a tree or subtree
+ * @param {string} target value that i am searching for in the tree
+ * @returns {object} returns the target if is in the tree, else null
+ */
 function nodeFind(node, target) {
   if (node.value === target) {
     return node;
@@ -69,7 +91,16 @@ function nodeFind(node, target) {
 console.log(nodeFind(abe, "Lisa"));
 console.log(nodeFind(abe, "Ben"));
 
+
+/**
+ * 4.	Create a new class ListNode (based on TreeNode below) that generates a linked list of Abe, Homer, Bart, Lisa, Maggie instead of a tree.
+ */
 class ListNode {
+   /**
+     * 
+     * @param {string} value to be given to value property
+     * @param {object} link is object for the next link inlist
+     */
   constructor(value, link) {
     this.value = value;
     this.next = link;
@@ -82,6 +113,12 @@ const bartList = new ListNode("Bart", lisaList);
 const homerList = new ListNode("Homer", bartList);
 const abeList = new ListNode("Abe", homerList);
 
+/**
+ * 5.	Given a target value in the list, return the node that contains the target value or null if no match. 
+ * @param {object} node that is the head of a list
+ * @param {string} target value that i am searching for in the list
+ * @returns {boolean} node in the list that matches the target, else null
+ */
 function findListNode(node, target) {
   if (node.value === target) {
     return node;
@@ -101,7 +138,12 @@ console.log(findListNode(abeList, "Lisa"));
 console.log(findListNode(abeList, "Homer"));
 console.log(findListNode(abeList, "Ben"));
 
-
+/**
+ * 6.  Walk through the tree and apply the function to each node  
+ * @param {object} node that is the root of a tree or subtree
+ * @param {string} modifierFunc is a function to be applied to each node
+ * @returns {undefined} no explicit return
+ */
 function treeModifier(node, modifierFunc) {
   modifierFunc(node);
   let childNodes = node.descendents;
@@ -112,13 +154,28 @@ function treeModifier(node, modifierFunc) {
   }
 }
 
+/**
+ * puts *** around the value of an object with a value property
+ * @param {object} node is an object that has a value property
+ * @returns {undefined} no return since it modifies the object
+ */
 function addStars(node) {
   node.value = "***" + node.value + "***";
 }
 
+/**
+ * Upper case the value of an object with a value property
+ * @param {object} node is an object that has a value property
+ * @returns {undefined} no return since it modifies the object
+ */
 function upperCase(node) {
   node.value = node.value.toUpperCase();
 }
+/**
+ * Reverse the value of an object with a value property
+ * @param {object} node is an object that has a value property
+ * @returns {undefined} no return since it modifies the object
+ */
 function reverse(node) {
   node.value = node.value.split("").reverse().join("");
 }
