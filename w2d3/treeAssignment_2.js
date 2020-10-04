@@ -22,51 +22,52 @@ console.log(lisa);
 function treeWalk(node) {
   console.log(node.value);
   let childNodes = node.descendents;
-  if (childNodes) {
-    childNodes.forEach(treeWalk); 
+  if (childNodes.length > 0) {
+    childNodes.forEach(treeWalk);
   }
 }
 treeWalk(abe);
 
-function treeFind(node, target) {
+function contains(node, target) {
   if (node.value === target) {
     return true;
-  }
-  if (node.descendents === null) {
-    return false;
   } else {
     let childNodes = node.descendents;
-    for (let anode of childNodes) {
-      if (treeFind(anode, target)) {
-        return true;
+    if (childNodes.length > 0) {
+      for (let anode of childNodes) {
+        if (contains(anode, target)) {
+          return true;
+        }
       }
     }
   }
+
   return false;
 }
 
-console.log(treeFind(abe, "Lisa"));
-console.log(treeFind(abe, "Ben"));
+console.log(contains(abe, "Lisa"));
+console.log(contains(abe, "Ben"));
 
-function findSubtree(node, target) {
+function nodeFind(node, target) {
   if (node.value === target) {
     return node;
-  }
-  if (node.descendents === null) {
-    return null;
   } else {
     let childNodes = node.descendents;
-    for (let anode of childNodes) {
-      if (findSubtree(anode, target)) {
-        return findSubtree(anode, target);
+    if (childNodes.length > 0) {
+      for (let anode of childNodes) {
+        let foundNode = nodeFind(anode, target);
+        if (foundNode) {
+          return foundNode;
+        }
       }
     }
   }
+
   return null;
 }
 
-console.log(findSubtree(abe, "Lisa"));
-console.log(findSubtree(abe, "Ben"));
+console.log(nodeFind(abe, "Lisa"));
+console.log(nodeFind(abe, "Ben"));
 
 class ListNode {
   constructor(value, link) {
@@ -75,11 +76,11 @@ class ListNode {
   }
 }
 
-const maggiel = new ListNode("Maggie", null);
-const lisal = new ListNode("Lisa", maggiel);
-const bartl = new ListNode("Bart", lisal);
-const homerl = new ListNode("Homer", bartl);
-const abel = new ListNode("Abe", homerl);
+const maggieList = new ListNode("Maggie", null);
+const lisaList = new ListNode("Lisa", maggieList);
+const bartList = new ListNode("Bart", lisaList);
+const homerList = new ListNode("Homer", bartList);
+const abeList = new ListNode("Abe", homerList);
 
 function findListNode(node, target) {
   if (node.value === target) {
@@ -96,14 +97,16 @@ function findListNode(node, target) {
   return null;
 }
 
-console.log(findListNode(abel, "Lisa"));
-console.log(findListNode(abel, "Homer"));
-console.log(findListNode(abel, "Ben"));
+console.log(findListNode(abeList, "Lisa"));
+console.log(findListNode(abeList, "Homer"));
+console.log(findListNode(abeList, "Ben"));
+
 
 function treeModifier(node, modifierFunc) {
   modifierFunc(node);
-  if (node.descendents.length > 0) {
-    for (let anode of node.descendents) {
+  let childNodes = node.descendents;
+  if (childNodes.length > 0) {
+    for (let anode of childNodes) {
       treeModifier(anode, modifierFunc);
     }
   }
@@ -113,6 +116,13 @@ function addStars(node) {
   node.value = "***" + node.value + "***";
 }
 
+function upperCase(node) {
+  node.value = node.value.toUpperCase();
+}
+function upperCase(node) {
+  node.value = node.value.split("").reverse().join("");
+}
 treeModifier(abe, addStars);
 treeWalk(abe);
-console.log(lisa.descendents.length);
+treeModifier(abe, upperCase);
+treeWalk(abe);

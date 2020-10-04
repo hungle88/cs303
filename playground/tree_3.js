@@ -53,7 +53,7 @@ function nodeFind(node, target) {
     let childNodes = node.descendents;
     if (childNodes.length > 0) {
       for (let anode of childNodes) {
-          let foundNode = nodeFind(anode, target);
+        let foundNode = nodeFind(anode, target);
         if (foundNode) {
           return foundNode;
         }
@@ -66,3 +66,55 @@ function nodeFind(node, target) {
 
 console.log(nodeFind(abe, "Lisa"));
 console.log(nodeFind(abe, "Ben"));
+
+class ListNode {
+  constructor(value, link) {
+    this.value = value;
+    this.next = link;
+  }
+}
+
+const maggieList = new ListNode("Maggie", null);
+const lisaList = new ListNode("Lisa", maggieList);
+const bartList = new ListNode("Bart", lisaList);
+const homerList = new ListNode("Homer", bartList);
+const abeList = new ListNode("Abe", homerList);
+
+function findListNode(node, target) {
+  if (node.value === target) {
+    return node;
+  } else {
+    let foundNode = findListNode(node.next, target);
+    if (foundNode) {
+      return foundNode;
+    }
+  }
+  return null;
+}
+
+console.log(findListNode(abeList, "Lisa"));
+
+function treeModifier(node, modifierFunc) {
+  modifierFunc(node);
+  let childNodes = node.descendents;
+  if (childNodes.length > 0) {
+    for (let anode of childNodes) {
+      treeModifier(anode, modifierFunc);
+    }
+  }
+}
+
+function addStars(node) {
+  node.value = "***" + node.value + "***";
+}
+
+function upperCase(node) {
+  node.value = node.value.toUpperCase();
+}
+function upperCase(node) {
+  node.value = node.value.split("").reverse().join("");
+}
+treeModifier(abe, addStars);
+treeWalk(abe);
+treeModifier(abe, upperCase);
+treeWalk(abe);
