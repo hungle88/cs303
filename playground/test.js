@@ -1,14 +1,17 @@
-function makeCounter() {
-    let count = 0;
+// function makeCounter() {
+//     let count = 0;
   
-    return function() {
-      return ++count;
-    };
-  }
+//     return function() {
+//       return ++count;
+//     };
+//   }
   
-  let counter = makeCounter();
-  console.log(counter());
-  console.log(counter());
-  console.log(counter());
-  console.log(counter());
-  console.log(counter());
+//   let counter = makeCounter();
+//   console.log(counter());
+//   console.log(counter());
+//   console.log(counter());
+//   console.log(counter());
+//   console.log(counter());
+// console.log(makeCounter);
+
+

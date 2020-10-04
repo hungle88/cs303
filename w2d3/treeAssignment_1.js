@@ -51,16 +51,14 @@ treeWalk(node1);
  * @returns {undefined} print out nodes
  */
 function treeIteration(node) {
-  console.log(node.name + ":  " + node.value);
+  console.log(node.name + ": " + node.value);
+
   let childNodes = node.children;
-  console.log(childNodes);
-  while (childNodes && childNodes.length !== 0) {
-    console.log(childNodes);
-    let nextNode = childNodes.shift();
-    console.log(nextNode);
-    console.log(nextNode.name + ":  " + nextNode.value);
-    if (nextNode.children !== null) {
-      childNodes = [...childNodes, ...nextNode.children];
+  while (childNodes.length > 0) {
+    let lastNode = childNodes.pop();
+    console.log(lastNode.name + ": " + lastNode.value);
+    if (lastNode.children !== null) {
+      childNodes = [...childNodes, ...lastNode.children];
     }
   }
 }
