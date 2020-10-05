@@ -1,11 +1,11 @@
 "use strict";
 /**
- * class constructor used to create simple tree data structure for the exercises
+ * class constructor used to create a tree data structure
  */
 class TreeNode {
       /**
      * 
-     * @param {string} value to be set for value property of object
+     * @param {string} value is the value of the object
      */
   constructor(value) {
     this.value = value;
@@ -25,7 +25,7 @@ homer.descendents.push(bart, lisa, maggie);
 console.log(lisa);
 
 /**
- *  1. recurses through tree and logs the value of each node to console
+ *  1. Log the value of each node to console
  * @param {object} node is the root of a tree
  * @returns {undefined} by default
  */
@@ -39,9 +39,9 @@ function treeWalk(node) {
 treeWalk(abe);
 
 /**
- * 2. Searches through tree until find the target as the value of a node
+ * 2. Find the target as the value of a node
  * @param {object} node that is the root of a tree or subtree
- * @param {string} target value that i am searching for in the tree
+ * @param {string} target value that is searched for
  * @returns {boolean} true if the target is in the tree, else false
  */
 function contains(node, target) {
@@ -65,9 +65,9 @@ console.log(contains(abe, "Lisa"));
 console.log(contains(abe, "Ben"));
 
 /**
- * 3. Searches through tree until find the target as the value of a node and returns the node
+ * 3. Find the target as the value of a node and returns the node
  * @param {object} node that is the root of a tree or subtree
- * @param {string} target value that i am searching for in the tree
+ * @param {string} target value that is searched for
  * @returns {object} returns the target if is in the tree, else null
  */
 function nodeFind(node, target) {
@@ -116,7 +116,7 @@ const abeList = new ListNode("Abe", homerList);
 /**
  * 5.	Given a target value in the list, return the node that contains the target value or null if no match. 
  * @param {object} node that is the head of a list
- * @param {string} target value that i am searching for in the list
+ * @param {string} target value that is searched for 
  * @returns {boolean} node in the list that matches the target, else null
  */
 function findListNode(node, target) {
@@ -139,7 +139,7 @@ console.log(findListNode(abeList, "Homer"));
 console.log(findListNode(abeList, "Ben"));
 
 /**
- * 6.  Walk through the tree and apply the function to each node  
+ * 6.  Apply the function to each node  
  * @param {object} node that is the root of a tree or subtree
  * @param {string} modifierFunc is a function to be applied to each node
  * @returns {undefined} no explicit return
@@ -157,7 +157,7 @@ function treeModifier(node, modifierFunc) {
 /**
  * puts *** around the value of an object with a value property
  * @param {object} node is an object that has a value property
- * @returns {undefined} no return since it modifies the object
+ * @returns {undefined} no return
  */
 function addStars(node) {
   node.value = "***" + node.value + "***";
@@ -166,7 +166,7 @@ function addStars(node) {
 /**
  * Upper case the value of an object with a value property
  * @param {object} node is an object that has a value property
- * @returns {undefined} no return since it modifies the object
+ * @returns {undefined} no return
  */
 function upperCase(node) {
   node.value = node.value.toUpperCase();
@@ -174,7 +174,7 @@ function upperCase(node) {
 /**
  * Reverse the value of an object with a value property
  * @param {object} node is an object that has a value property
- * @returns {undefined} no return since it modifies the object
+ * @returns {undefined} no return 
  */
 function reverse(node) {
   node.value = node.value.split("").reverse().join("");
