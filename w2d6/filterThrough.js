@@ -47,7 +47,7 @@ describe("inBetween", function() {
 
   it("returns the filter for values between", function() {
     let filter = inBetween(3, 6);
-    assert.isTrue(filter(4));
+    assert.isTrue(filter(5));
     assert.isFalse(filter(0));
   });
 });
