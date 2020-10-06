@@ -1,3 +1,7 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable require-jsdoc */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 "use strict";
 {
 console.log("Why do all of the shooters show the same value?");
@@ -40,7 +44,7 @@ describe("army", function() {
   
   before(function() {
     army = makeArmy();
-    window.alert = sinon.stub(window, "alert");
+    window.console.log = sinon.stub(window, "alert");
   });
 
   it("army[0] shows 0", function() {
