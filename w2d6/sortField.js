@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-inner-declarations */
 /* eslint-disable no-undef */
 /* eslint-disable id-length */
 "use strict";

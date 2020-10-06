@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 "use strict";
-
+{
 /**
  *
  * @param {number} a is min value
@@ -8,10 +8,8 @@
  * @return {number} numbers between a and b
  */
 function inBetween(a, b) {
-  return function (n) {
-    if (n >= a && n <= b) {
-      return n;
-    }
+  return function(n) {
+    return n >= a && n <= b;
   };
 }
 
@@ -32,3 +30,25 @@ console.log(arr.filter(inBetween(3, 6)));
 
 console.log(arr.filter(inArray([1, 2, 10])));
 
+
+describe("inArray", function() {
+  let arr = [1, 2, 3, 4, 5, 6, 7];
+
+  it("returns the filter for values in array", function() {
+
+    let filter = inArray(arr);
+    assert.isTrue(filter(5));
+    assert.isFalse(filter(0));
+  });
+});
+
+
+describe("inBetween", function() {
+
+  it("returns the filter for values between", function() {
+    let filter = inBetween(3, 6);
+    assert.isTrue(filter(4));
+    assert.isFalse(filter(0));
+  });
+});
+}
