@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure assignment part 1</title>
+</head>
+<body>
+    
+
+      <strong>Does a function pickup latest changes?</strong><br/>
+      The function sayHi uses an external variable name. When the function runs, which value is it going to use?<br/>
+      <br/>
+      <code>let name = "John";<br/>
+      function sayHi() {<br/>
+        alert("Hi, " + name);<br/>
+      }<br/>
+      <br/>
+      name = "Pete";<br/>
+      <br/>
+      sayHi();<br/>
+    </code><br/>
+      "Pete" is the output value<br/>
+      Because the function uses the most recent values<br/>
+      <br/>
+    
+    
+      <strong>Which variables are available?</strong><br/>
+      
+      The function makeWorker below makes another function and returns it. That new function can be called from somewhere else.<br/>
+      Will it have access to the outer variables from its creation place, or the invocation place, or both?<br/>
+      <br/>
+      <code>
+      function makeWorker() {<br/>
+        let name = "Pete";<br/>
+        <br/>
+        return function () {<br/>
+          alert(name);<br/>
+        };<br/>
+      }<br/>
+      <br/>
+      let name = "John";<br/>
+      <br/>
+      let work = makeWorker();<br/>
+      <br/>
+      work();<br/>
+      </code>
+      <br/>
+      The output is Pete<br/>
+      <br/>
+    
+    
+      <strong>Are counters independent?</strong><br/>
+      Here we make two counters: counter and counter2 using the same makeCounter function.<br/>
+      Are they independent? What is the second counter going to show? 0,1 or 2,3 or something else?<br/>
+      <br/><code>
+      function makeCounter() {<br/>
+        let count = 0;<br/>
+        <br/>
+        return function () {<br/>
+          return count++;<br/>
+        };<br/>
+      }<br/>
+      <br/>
+      let counter = makeCounter();<br/>
+      let counter2 = makeCounter();<br/>
+      <br/>
+      alert(counter()); // 0<br/>
+      alert(counter()); // 1<br/>
+      <br/>
+      alert(counter2()); // ?<br/>
+      alert(counter2()); // ?<br/>
+      </code>
+      <br/>
+      The output values of counter2 are 0 and 1. Counter and counter2 are independent.<br/>
+      They have independent outer Lexical Environments<br/>
+      <br/>
+    
+    
+      <strong>Counter object</strong><br/>
+      Here a counter object is made with the help of the constructor function.<br/>
+      Will it work? What will it show?<br/>
+      <br/>
+      <code>
+      function Counter() {<br/>
+        let count = 0;<br/>
+        <br/>
+        this.up = function () {<br/>
+          return ++count;<br/>
+        };<br/>
+        this.down = function () {<br/>
+          return --count;<br/>
+        };<br/>
+      }<br/>
+      <br/>
+      let counter = new Counter();<br/>
+      <br/>
+      alert(counter.up()); // ?<br/>
+      alert(counter.up()); // ?<br/>
+      alert(counter.down()); // ?<br/>
+    </code><br/>
+      It works<br/>
+      The output values are 1, 2, 1<br/>
+    
+      <br/>
+    
+      <strong>Function in if</strong><br/>
+      Look at the code. What will be the result of the call at the last line?<br/>
+      <br/>
+    <code>
+      let phrase = "Hello";<br/>
+      <br/>
+      if (true) {<br/>
+        let user = "John";<br/>
+        <br/>
+        function sayHi() {<br/>
+          alert(`${phrase}, ${user}`);<br/>
+        }<br/>
+      }<br/>
+      <br/>
+      sayHi();<br/>
+      <br/>
+    </code>
+      The result is error<br/>
+      sayHi is declared inside if<br/>
+      There is no function sayHi outside<br/>
+      <br/>
+    
+   <strong>Is variable visible?</strong><br/>
+    What will be the result of this code?<br/>
+    <br/>
+    <code>
+    let x = 1;<br/>
+    <br/>
+    function func() {<br/>
+      console.log(x); // ?<br/>
+      <br/>
+      let x = 2;<br/>
+    }<br/>
+    <br/>
+    func();<br/>
+    </code>
+    <br/>
+    The output is error because x is not declared yet<br/>
+
+
+</body>
+</html>
