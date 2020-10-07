@@ -1,5 +1,11 @@
+/* eslint-disable id-length */
 "use strict";
-
+/**
+ * 
+ * @param {array} arr is an array of value
+ * @param {function} func is the callback function
+ * @returns {array} is the filtered array
+ */
 function myFilter(arr, func) {
   let newArr = [];
   for (let el of arr) {
@@ -10,14 +16,29 @@ function myFilter(arr, func) {
   return newArr;
 }
 
+/**
+ * 
+ * @param {number} num is a number 
+ * @returns {boolean} even numbers or not
+ */
 function even(num) {
   return num % 2 === 0;
 }
 
+/**
+ * 
+ * @param {number} num is a number
+ * @returns {boolean} odd numbers or not
+ */
 function odd(num) {
   return num % 2 !== 0;
 }
 
+/**
+ * 
+ * @param {number} num is a number
+ * @returns {boolean} number greater than 5 nor not
+ */
 function greaterThanFive(num) {
   return num > 5;
 }
