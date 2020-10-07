@@ -1,11 +1,18 @@
+/* eslint-disable id-length */
 "use strict";
 
+/**
+ * 
+ * @param {number} from is the min value
+ * @param {number} to is the max value
+ * @returns {number} numbers between min and max
+ */
 function printNumbers(from, to) {
   let n = from;
-  setTimeout(function run() {
+  setTimeout(function count() {
     console.log(n);
     n++;
-    let timer = setTimeout(run, 1000);
+    let timer = setTimeout(count, 1000);
     if(n === to){
         clearTimeout(timer);
     }

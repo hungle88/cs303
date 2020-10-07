@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scheduling: setTimeout and setInterval</title>
+    <script src="printNumber_1.js"></script>
+    <script src="printNumber_2.js"></script>
+  </head>
+  <body>
+    <strong>Output every second</strong><br />
+    <p>
+      Write a function printNumbers(from, to) that outputs a number every
+      second, starting from from and ending with to.<br />
+
+      Make two variants of the solution.<br />
+
+      Using setInterval.<br />
+      Using nested setTimeout.<br />
+      <br />
+      <strong>see console</strong>
+    </p>
+    <strong>What will setTimeout show?</strong>
+    <p>
+      In the code below there’s a setTimeout call scheduled, then a heavy
+      calculation is run, that takes more than 100ms to finish.<br />
+
+      When will the scheduled function run?<br />
+
+      After the loop.<br />
+      Before the loop.<br />
+      In the beginning of the loop.<br />
+
+      <br />
+      Answer: After the loop <br />
+      <br />
+      What is alert going to show?
+    </p>
+    <br />
+
+    <code>
+      let i = 0; <br />
+      <br />
+      setTimeout(() => alert(i), 100); // ?<br />
+      <br />
+      // assume that the time to execute this function is >100ms<br />
+      for(let j = 0; j < 100000000; j++) {<br />
+      i++;<br />
+      }<br /> </code
+    ><br />
+    alert is going to show i = 100000000<br />
+  </body>
+</html>
