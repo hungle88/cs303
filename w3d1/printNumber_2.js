@@ -12,4 +12,4 @@ function printNumbers(from, to) {
   }, 1000);
 }
 
-printNumbers(1, 5);
+printNumbers(1, 5)
