@@ -16,7 +16,7 @@ function even(num) {
 }
 
 
-let testArray =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let testArr =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let output = myFilter(arr, greatThanFive);
+let output = myFilter(testArr, even);
 console.log(output);
