@@ -3,8 +3,8 @@
 function myFilter(arr, func) {
 let newArr = [];
 for(let el of arr) {
-    if(func){
-    newArr.push(func(el));
+    if(func(el)){
+    newArr.push(el);
 }
 }
 return newArr;
