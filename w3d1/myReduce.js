@@ -9,6 +9,10 @@ function myReduce(arr, func, init) {
 
 let testArr = [1, 2, 3, 4, 5];
 
-let output = myReduce(testArr, (sum, el) => sum + el, 0);
+let output = myReduce(testArr, sum, 2);
+
+function sum(a, b) {
+  return a + b;
+}
 
 console.log(output);
