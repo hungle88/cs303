@@ -11,6 +11,12 @@ return newArr;
 }; 
 
 
-function greatThanFive(num) {
-    return num > 5;
+function even(num) {
+    return num % 2 ==0;
 }
+
+
+let testArray =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let output = myFilter(arr, greatThanFive);
+console.log(output);
