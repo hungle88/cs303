@@ -14,4 +14,4 @@ function printNumbers(from, to) {
   }
 }
 
-printNumbers(1, 5);
+printNumbers(1, 5)
