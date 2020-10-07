@@ -1,12 +1,12 @@
-let users = [
-  { name: "John", age: 20, surname: "Johnson" },
-  { name: "Pete", age: 18, surname: "Peterson" },
-  { name: "Ann", age: 19, surname: "Hathaway" }
-];
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
 
-
-function byField(fieldName){
-  return (a, b) => a.fieldName > b.fieldName ? 1 : -1;
+for (let key in user) {
+  // keys
+  console.log( key );  // name, age, isAdmin
+  // values for the keys
+  console.log( user[key] ); // John, 30, true
 }
-
-console.log(users.sort(byField("age")));
