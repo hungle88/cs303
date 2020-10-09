@@ -47,21 +47,21 @@
 
 // stopWatch(6);
 
-{
-  function greeting(lang) {
-    console.log(`${lang}: I am ${this.name}`);
-  }
-  const john = {
-    name: "John",
-  };
-  const jane = {
-    name: "Jane",
-  };
-  const greetingJohn = greeting.bind(john, "en");
-  greetingJohn();
-  const greetingJane = greeting.bind(jane, "es");
-  greetingJane();
-}
+// {
+//   function greeting(lang) {
+//     console.log(`${lang}: I am ${this.name}`);
+//   }
+//   const john = {
+//     name: "John",
+//   };
+//   const jane = {
+//     name: "Jane",
+//   };
+//   const greetingJohn = greeting.bind(john, "en");
+//   greetingJohn();
+//   const greetingJane = greeting.bind(jane, "es");
+//   greetingJane();
+// }
 {
   function greet(greeting) {
     console.log(
@@ -82,23 +82,23 @@
   greet.call(jane, "Hello");
 }
 
-{
-  function greet(greeting, lang) {
-    console.log(lang);
-    console.log(
-      `${greeting}, I am ${this.name} and I am ${this.age} years old`
-    );
-  }
-  const john = {
-    name: "John",
-    age: 24,
-  };
-  const jane = {
-    name: "Jane",
-    age: 22,
-  };
-  // Hi, I am John and I am 24 years old
-  greet.apply(john, ["Hi", "en"]);
-  // Hi, I am Jane and I am 22 years old
-  greet.apply(jane, ["Hola", "es"]);
-}
+// {
+//   function greet(greeting, lang) {
+//     console.log(lang);
+//     console.log(
+//       `${greeting}, I am ${this.name} and I am ${this.age} years old`
+//     );
+//   }
+//   const john = {
+//     name: "John",
+//     age: 24,
+//   };
+//   const jane = {
+//     name: "Jane",
+//     age: 22,
+//   };
+//   // Hi, I am John and I am 24 years old
+//   greet.apply(john, ["Hi", "en"]);
+//   // Hi, I am Jane and I am 22 years old
+//   greet.apply(jane, ["Hola", "es"]);
+// }
