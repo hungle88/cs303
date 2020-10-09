@@ -1,6 +1,11 @@
+/* eslint-disable id-length */
+/* eslint-disable require-jsdoc */
+/* eslint-disable no-undef */
+/* eslint-disable no-redeclare */
 "use strict";
 const prompt = require("prompt-sync")();
 
+/**Fix a function that loses "this" using Apply*/
 function askPassword(ok, fail) {
   let password = prompt("Password?", "");
   if (password == "rockstar") ok();
@@ -19,4 +24,8 @@ let user = {
   },
 };
 
-askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+askPassword(
+  () => user.loginOk.apply(user),
+  () => user.loginFail.apply(user)
+);
+

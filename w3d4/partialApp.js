@@ -1,16 +1,19 @@
+/* eslint-disable id-length */
+/* eslint-disable require-jsdoc */
 "use strict";
-
+/* Partial functions
+*/
 function askPassword(ok, fail) {
-    let password = prompt("Password?", '');
+    let password = prompt("Password?", "");
     if (password == "rockstar") ok();
     else fail();
   }
   
   let user = {
-    name: 'John',
+    name: "John",
   
     login(result) {
-      alert( this.name + (result ? ' logged in' : ' failed to log in') );
+      alert( this.name + (result ? " logged in" : " failed to log in") );
     }
   };
   
