@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 "use strict";
 
-function count() {
+function tenClock() {
   let second = 0;
   setTimeout(function now() {
     let date = new Date();
@@ -16,4 +16,4 @@ function count() {
   }, 1000);
 }
 
-count();
+tenClock();
