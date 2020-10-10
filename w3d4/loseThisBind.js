@@ -1,3 +1,4 @@
+/* eslint-disable valid-jsdoc */
 /* eslint-disable id-length */
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-undef */
