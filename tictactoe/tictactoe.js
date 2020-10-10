@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable id-length */
 "use strict";
 let winners = new Array();
@@ -10,6 +11,7 @@ let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
 let size = 4;
+
 
 function drawBoard() {
   let Parent = document.getElementById("game");
@@ -26,6 +28,7 @@ function drawBoard() {
       let col = document.createElement("td");
       col.id = counter;
 
+    
       let handler = function myFunc(e) {
         if (currentPlayer == 0) {
           this.innerHTML = "X";
