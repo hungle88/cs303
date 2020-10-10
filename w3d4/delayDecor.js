@@ -1,3 +1,5 @@
+/* eslint-disable id-length */
+/* eslint-disable require-jsdoc */
 "use strict";
 
 function f(x) {
