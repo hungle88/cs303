@@ -40,7 +40,8 @@ function drawBoard() {
           d("player2").classList.add("selected");
         } else {
           this.innerHTML = "O";
-          player2Selections.push(parseInt(this.id)); 
+          console.log(this.id);
+          player2Selections.push(parseInt(this.id * Math.random())); 
         //   parseInt(Math.random() * arr.length)
           player2Selections.sort(function (a, b) {
             return a - b;
