@@ -8,7 +8,7 @@ var currentPlayer = 0;
 var move = 0;
 var points1 = 0;    // player 1 points
 var points2 = 0;    // player 2 points
-var size = 4;
+var size = 3;
 
 function drawBoard() {
     var Parent = document.getElementById("game");
@@ -18,10 +18,10 @@ function drawBoard() {
         Parent.removeChild(Parent.firstChild);
     }
 
-    for (s = 0; s < 4; s++) {
+    for (s = 0; s < 3; s++) {
         var row = document.createElement("tr");
         
-        for (r = 0; r < 4; r++) {
+        for (r = 0; r < 3; r++) {
             var col = document.createElement("td");
             col.id = counter;
 
@@ -56,7 +56,7 @@ function drawBoard() {
                     drawBoard();
                 }
 
-                else if (player2Selections.length + player1Selections.length == 16)
+                else if (player2Selections.length + player1Selections.length == 9)
                 {
                     reset();
                     drawBoard();
@@ -99,18 +99,14 @@ function reset()
 
 function loadAnswers()
 {
-    winners.push([1, 2, 3, 4]);
-    winners.push([5, 6, 7, 8]);
-    winners.push([9, 10, 11, 12]);
-    winners.push([13, 14, 15, 16]);
-    winners.push([1, 5, 9, 13]);
-    winners.push([2, 6, 10, 14]);
-    winners.push([3, 7, 11, 15]);
-    winners.push([4, 8, 12, 16]);
-    winners.push([1, 6, 11, 16]);
-    winners.push([4, 7, 10, 13]);
-
- 
+    winners.push([1, 2, 3]);
+    winners.push([4, 5, 6]);
+    winners.push([7, 8, 9]);
+    winners.push([1, 4, 7]);
+    winners.push([2, 5, 8]);
+    winners.push([3, 6, 9]);
+    winners.push([1, 5, 9]);
+    winners.push([3, 5, 7]);
 }
 
 function checkWinner() {
