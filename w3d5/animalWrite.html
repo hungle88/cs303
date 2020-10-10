@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where does it write?</title>
+</head>
+<body>
+    <code>let animal = {<br/>
+        eat() {<br/>
+          this.full = true;<br/>
+        }<br/>
+      };<br/>
+      <br/>
+      let rabbit = {<br/>
+        __proto__: animal<br/>
+      };<br/>
+      <br/>
+      rabbit.eat();<br/>
+      </code><br/>
+      If we call rabbit.eat(), which object receives the full property: animal or rabbit?<br/>
+      Answer: rabbitm because it modifies the state of rabit only.<br/>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Working with prototype</title>
+  </head>
+  <body>
+    <code>
+      let animal = { <br />
+      jumps: null<br />
+      }; let rabbit = {<br />
+      __proto__: animal,<br />
+      jumps: true<br />
+      };<br />
+    </code>
+    <br />
+    alert( rabbit.jumps ); //The answer is true <br />
+    delete rabbit.jumps; <br />
+    alert(rabbit.jumps ); // The answer is null <br />
+    delete animal.jumps; <br />
+    alert(rabbit.jumps ); // The answer is undefined<br />
+  </body>
+</html>
