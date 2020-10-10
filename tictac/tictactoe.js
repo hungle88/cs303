@@ -1,3 +1,4 @@
+
 var winners = new Array();
 var player1Selections = new Array();
 var player2Selections = new Array();
