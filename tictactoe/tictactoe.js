@@ -20,11 +20,13 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
+let rowLength = prompt("Please enter the row length for the new game: ");
+let colLength = prompt("Please enter the column length for the new game: ");
 
-  for (let s = 0; s < 4; s++) {
+  for (let s = 0; s < rowLength; s++) {
     let row = document.createElement("tr");
 
-    for (let r = 0; r < 4; r++) {
+    for (let r = 0; r < colLength; r++) {
       let col = document.createElement("td");
       col.id = counter;
 
@@ -57,7 +59,7 @@ function drawBoard() {
 
           reset();
           drawBoard();
-        } else if (player2Selections.length + player1Selections.length == 16) {
+        } else if (player2Selections.length + player1Selections.length == rowLength*colLength) {
           reset();
           drawBoard();
         } else {
@@ -143,10 +145,15 @@ function checkWinner() {
 
       if (setFound == true) {
         win = true;
+        if(playerSelections === player1Selections) {
+          alert("Congratulations! Player 1 won!")
+        } else alert("Congratulations! Player 2 won");
         break;
       }
     }
   }
+
+  
 
   return win;
 }
