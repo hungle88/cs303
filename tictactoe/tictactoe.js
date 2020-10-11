@@ -20,8 +20,7 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-let rowLength = prompt("Please enter the board width to start the new game: ");
-let colLength = prompt("Please enter the board height to start the new game: ");
+let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < rowLength; s++) {
     let row = document.createElement("tr");
@@ -59,7 +58,7 @@ let colLength = prompt("Please enter the board height to start the new game: ");
 
           reset();
           drawBoard();
-        } else if (player2Selections.length + player1Selections.length == rowLength*colLength) {
+        } else if (player2Selections.length + player1Selections.length == boardSize*boardSize) {
           reset();
           drawBoard();
         } else {
