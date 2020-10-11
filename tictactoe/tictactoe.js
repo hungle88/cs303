@@ -10,7 +10,7 @@ let currentPlayer = 0;
 let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
-let size = 4;
+let boardSize = prompt("Please enter the board size to start the new game: ");
 
 
 function drawBoard() {
@@ -20,7 +20,7 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-let boardSize = prompt("Please enter the board size to start the new game: ");
+// let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");
@@ -93,6 +93,17 @@ function reset() {
 }
 
 function loadAnswers() {
+  if(boardSize == 3) {
+    winners.push([1, 2, 3]);
+    winners.push([4, 5, 6]);
+    winners.push([7, 8, 9]);
+    winners.push([1, 4, 7]);
+    winners.push([2, 5, 8]);
+    winners.push([3, 6, 9]);
+    winners.push([1, 5, 9]);
+    winners.push([3, 5, 7]);
+  }
+  else if(boardSize ==4){
   winners.push([1, 2, 3, 4]);
   winners.push([5, 6, 7, 8]);
   winners.push([9, 10, 11, 12]);
@@ -103,6 +114,7 @@ function loadAnswers() {
   winners.push([4, 8, 12, 16]);
   winners.push([1, 6, 11, 16]);
   winners.push([4, 7, 10, 13]);
+  }
 }
 
 function checkWinner() {
@@ -114,7 +126,7 @@ function checkWinner() {
   if (currentPlayer == 0) playerSelections = player1Selections;
   else playerSelections = player2Selections;
 
-  if (playerSelections.length >= size) {
+  if (playerSelections.length >= boardSize) {
     // check if any 'winners' are also in your selections
 
     for (let i = 0; i < winners.length; i++) {
