@@ -12,6 +12,7 @@ let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
 let boardSize = prompt("Please enter the board size to start the new game: ");
 
+
 function drawBoard() {
   let Parent = document.getElementById("game");
   let counter = 1;
@@ -19,7 +20,7 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-  // let boardSize = prompt("Please enter the board size to start the new game: ");
+// let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");
@@ -28,6 +29,7 @@ function drawBoard() {
       let col = document.createElement("td");
       col.id = counter;
 
+    
       let handler = function myFunc(e) {
         if (currentPlayer == 0) {
           this.innerHTML = "X";
@@ -56,10 +58,7 @@ function drawBoard() {
 
           reset();
           drawBoard();
-        } else if (
-          player2Selections.length + player1Selections.length ==
-          boardSize * boardSize
-        ) {
+        } else if (player2Selections.length + player1Selections.length == boardSize * boardSize) {
           reset();
           drawBoard();
         } else {
@@ -94,7 +93,7 @@ function reset() {
 }
 
 function loadAnswers() {
-  if (boardSize == 3) {
+  if(boardSize == 3) {
     winners.push([1, 2, 3]);
     winners.push([4, 5, 6]);
     winners.push([7, 8, 9]);
@@ -103,18 +102,20 @@ function loadAnswers() {
     winners.push([3, 6, 9]);
     winners.push([1, 5, 9]);
     winners.push([3, 5, 7]);
-  } else if (boardSize == 4) {
-    winners.push([1, 2, 3, 4]);
-    winners.push([5, 6, 7, 8]);
-    winners.push([9, 10, 11, 12]);
-    winners.push([13, 14, 15, 16]);
-    winners.push([1, 5, 9, 13]);
-    winners.push([2, 6, 10, 14]);
-    winners.push([3, 7, 11, 15]);
-    winners.push([4, 8, 12, 16]);
-    winners.push([1, 6, 11, 16]);
-    winners.push([4, 7, 10, 13]);
-  } else if (boardSize == 5) {
+  }
+  else if(boardSize ==4){
+  winners.push([1, 2, 3, 4]);
+  winners.push([5, 6, 7, 8]);
+  winners.push([9, 10, 11, 12]);
+  winners.push([13, 14, 15, 16]);
+  winners.push([1, 5, 9, 13]);
+  winners.push([2, 6, 10, 14]);
+  winners.push([3, 7, 11, 15]);
+  winners.push([4, 8, 12, 16]);
+  winners.push([1, 6, 11, 16]);
+  winners.push([4, 7, 10, 13]);
+  } 
+  else if(boardSize == 5) {
     winners.push([1, 2, 3, 4, 5]);
     winners.push([6, 7, 8, 9, 10]);
     winners.push([11, 12, 13, 14, 15]);
@@ -127,17 +128,9 @@ function loadAnswers() {
     winners.push([5, 10, 15, 20, 25]);
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
-  } 
-  // else if (boardSize > 5) {
-  //   for (let i = 1; i <= boardSize - 5 + 1; i++) {
-  //     let newArr = [];
-  //     for (let j = i; j <= boardSize - (boardSize - 4) + i; j++) {
-  //       newArr.push(j);
-  //     }
-  //     winners.push(newArr);
-  //   }
-  // }
-  // console.log(winners);
+    
+
+  }
 }
 
 function checkWinner() {
@@ -179,13 +172,15 @@ function checkWinner() {
 
       if (setFound == true) {
         win = true;
-        if (playerSelections === player1Selections) {
-          alert("Congratulations! Player 1 won at: " + playerSelections);
-        } else alert("Congratulations! Player 2 won at: " + playerSelections);
+        if(playerSelections === player1Selections) {
+          alert("Congratulations! Player 1 won at: "+ playerSelections)
+        } else alert("Congratulations! Player 2 won at: "+ playerSelections);
         break;
       }
     }
   }
+
+  
 
   return win;
 }
