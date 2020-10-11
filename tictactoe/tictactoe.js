@@ -147,7 +147,7 @@ function checkWinner() {
         win = true;
         if(playerSelections === player1Selections) {
           alert("Congratulations! Player 1 won!")
-        } else alert("Congratulations! Player 2 won");
+        } else alert("Congratulations! Player 2 won!");
         break;
       }
     }
