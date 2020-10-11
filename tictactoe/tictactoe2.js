@@ -41,7 +41,7 @@ function drawBoard() {
         } else {
           this.innerHTML = "O";
           console.log(this.id);
-          player2Selections.push(parseInt(this.id * Math.random())); 
+          player2Selections.push(parseInt(this.id)); 
         //   parseInt(Math.random() * arr.length)
           player2Selections.sort(function (a, b) {
             return a - b;
