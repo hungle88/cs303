@@ -20,8 +20,8 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-let rowLength = prompt("Please enter the board width for the new game: ");
-let colLength = prompt("Please enter the board height for the new game: ");
+let rowLength = prompt("Please enter the board width to start the new game: ");
+let colLength = prompt("Please enter the board height to start the new game: ");
 
   for (let s = 0; s < rowLength; s++) {
     let row = document.createElement("tr");
