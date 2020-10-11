@@ -22,7 +22,7 @@ function drawBoard() {
   }
 let boardSize = prompt("Please enter the board size to start the new game: ");
 
-  for (let s = 0; s < Boolean; s++) {
+  for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");
 
     for (let r = 0; r < boardSize; r++) {
@@ -58,7 +58,7 @@ let boardSize = prompt("Please enter the board size to start the new game: ");
 
           reset();
           drawBoard();
-        } else if (player2Selections.length + player1Selections.length == boardSize*boardSize) {
+        } else if (player2Selections.length + player1Selections.length == boardSize * boardSize) {
           reset();
           drawBoard();
         } else {
