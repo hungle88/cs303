@@ -22,10 +22,10 @@ function drawBoard() {
   }
 let boardSize = prompt("Please enter the board size to start the new game: ");
 
-  for (let s = 0; s < rowLength; s++) {
+  for (let s = 0; s < Boolean; s++) {
     let row = document.createElement("tr");
 
-    for (let r = 0; r < colLength; r++) {
+    for (let r = 0; r < boardSize; r++) {
       let col = document.createElement("td");
       col.id = counter;
 
