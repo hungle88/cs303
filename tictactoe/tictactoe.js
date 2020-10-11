@@ -63,7 +63,7 @@ function drawBoard() {
         } else {
           if (currentPlayer == 0) currentPlayer = 1;
           else currentPlayer = 0;
-          return this.removeEventListener("click", myFunc());
+          return this.removeEventListener("click", myFunc);
         }
       };
 
