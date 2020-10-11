@@ -114,6 +114,22 @@ function loadAnswers() {
   winners.push([4, 8, 12, 16]);
   winners.push([1, 6, 11, 16]);
   winners.push([4, 7, 10, 13]);
+  } 
+  else if(boardSize == 5) {
+    winners.push([1, 2, 3, 4, 5]);
+    winners.push([6, 7, 8, 9, 10]);
+    winners.push([11, 12, 13, 14, 15]);
+    winners.push([16, 17, 18, 19, 20]);
+    winners.push([21, 22, 23, 24, 25]);
+    winners.push([1, 6, 11, 16, 21]);
+    winners.push([2, 7, 12, 17, 22]);
+    winners.push([3, 8, 13, 18, 23]);
+    winners.push([4, 9, 14, 19, 24]);
+    winners.push([5, 10, 15, 20, 25]);
+    winners.push([1, 7, 13, 19, 25]);
+    winners.push([5, 9, 13, 17, 21]);
+    
+
   }
 }
 
