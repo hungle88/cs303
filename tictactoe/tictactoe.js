@@ -94,7 +94,7 @@ function reset() {
 }
 
 function loadAnswers() {
-  //I'm writing codes to generate all the winning results without typing them one by one.
+  //I'm writing codes to generate all the winning results so I don't have to type each winning condition one by one.
 //   for(let i = 0; i < 0; i++) {
 //     for(let k = 0; k <= boardSize * (boardSize-1); k += boardSize){
 //     let newArr =[];
@@ -141,7 +141,8 @@ function loadAnswers() {
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
   }
-//   else if (boardSize > 5) {
+//   I'm writing codes to apply the same 5x5 winning condition to other sizes greater than 5x5
+// else if (boardSize > 5) {
 //     let counting = boardSize - 5;
 //     //getting first row winning condition
 //     for (let i = 0; i <= counting; i++) {

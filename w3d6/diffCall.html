@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The difference between calls</title>
+  </head>
+  <body>
+    <code
+      >function Rabbit(name) {<br />
+      this.name = name;<br />
+      }<br />
+      Rabbit.prototype.sayHi = function() {<br />
+      alert(this.name);<br />
+      };<br />
+      <br />
+      let rabbit = new Rabbit("Rabbit");<br />
+    </code>
+    These calls do the same thing or not? <br />
+    <br/>
+    <code>
+      rabbit.sayHi(); <strong>//Answer: Rabbit</strong><br />
+      Rabbit.prototype.sayHi(); <strong>//Answer: undefined</strong><br />
+      Object.getPrototypeOf(rabbit).sayHi(); <strong>//Answer: undefined</strong><br />
+      rabbit.__proto__.sayHi(); <strong>//Answer: undefined</strong><br />
+    </code>
+  </body>
+</html>
