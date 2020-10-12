@@ -10,7 +10,7 @@ let currentPlayer = 0;
 let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
-// let boardSize = prompt("Please enter the board size to start the new game: ");
+let boardSize = prompt("Please enter the board size to start the new game: ");
 
 function drawBoard() {
   let Parent = document.getElementById("game");
@@ -19,7 +19,7 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-  let boardSize = prompt("Please enter the board size to start the new game: ");
+  // let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");
@@ -127,28 +127,28 @@ function loadAnswers() {
     winners.push([5, 10, 15, 20, 25]);
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
-  // } else if (boardSize > 5) {
-  //   let counting = boardSize - 5;
-  //   //getting first row winning condition
-  //   for (let i = 0; i <= counting; i++) {
-  //     let newArr = [];
-  //     for (let a = 1 + i; a <= 5 + i; a++) {
-  //       newArr.push(a);
-  //     }
-  //     winners.push(newArr);
-  //     // console.log(newArr);
-  //   }
-  //   //trying to get the row winning condition
-  //   for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
-  //     for (let i = 0; i <= counting; i++) {
-  //       let newArr = [];
-  //       for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
-  //         newArr.push(a);
-  //       }
-  //       winners.push(newArr);
-  //       // console.log(newArr);
-  //     }
-  //   }
+  } else if (boardSize > 5) {
+    let counting = boardSize - 5;
+    //getting first row winning condition
+    for (let i = 0; i <= counting; i++) {
+      let newArr = [];
+      for (let a = 1 + i; a <= 5 + i; a++) {
+        newArr.push(a);
+      }
+      winners.push(newArr);
+      // console.log(newArr);
+    }
+    //trying to get the row winning condition
+    for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
+      for (let i = 0; i <= counting; i++) {
+        let newArr = [];
+        for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
+          newArr.push(a);
+        }
+        winners.push(newArr);
+        // console.log(newArr);
+      }
+    }
 //     //getting column winning condition
 //     for (let i = 1; i < boardSize; i++) {
 //       let k = boardSize * (boardSize - 1);
