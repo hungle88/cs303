@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Changing "prototype"</title>
+</head>
+<body>
+    <p>In the code below we create new Rabbit, and then try to modify its prototype. <br/>
+        <br/>
+In the start, we have this code:<br/>
+<br/>
+function Rabbit() {}<br/>
+Rabbit.prototype = {<br/>
+  eats: true<br/>
+};<br/>
+<br/>
+let rabbit = new Rabbit();<br/>
+<br/>
+alert( rabbit.eats ); // true <br/>
+</p>
+<br/>
+<p>We added one more string (emphasized). What will alert show now?<br/>
+    <br/>
+function Rabbit() {}<br/>
+Rabbit.prototype = {<br/>
+  eats: true<br/>
+};<br/>
+<br/>
+let rabbit = new Rabbit();<br/>
+<br/>
+Rabbit.prototype = {};<br/>
+<br/>
+alert( rabbit.eats ); //<strong> Answer: true</strong><br/>
+
+</p>
+
+
+<p><br/>
+…And if the code is like this (replaced one line)?<br/>
+<br/>
+function Rabbit() {}<br/>
+Rabbit.prototype = {<br/>
+  eats: true<br/>
+};<br/>
+<br/>
+let rabbit = new Rabbit();<br/>
+<br/>
+Rabbit.prototype.eats = false;<br/>
+<br/>
+alert( rabbit.eats ); // <strong>Answer: false</strong><br/>
+<br/>
+And like this (replaced one line)?<br/>
+<br/>
+function Rabbit() {}<br/>
+Rabbit.prototype = {<br/>
+  eats: true<br/>
+};<br/>
+<br/>
+let rabbit = new Rabbit();<br/>
+<br/>
+delete rabbit.eats;<br/>
+<br/>
+alert( rabbit.eats ); // <strong>Answer: true</strong><br/>
+</p>
+
+<p><br/>
+The last variant:<br/>
+<br/>
+function Rabbit() {}<br/>
+Rabbit.prototype = {<br/>
+  eats: true<br/>
+};<br/>
+<br/>
+let rabbit = new Rabbit();<br/>
+<br/>
+delete Rabbit.prototype.eats;<br/>
+<br/>
+alert( rabbit.eats ); //<strong> Answer: undefined</strong><br/>
+</p>
+</body>
+</html>
