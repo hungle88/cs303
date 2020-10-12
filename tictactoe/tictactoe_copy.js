@@ -10,7 +10,9 @@ let currentPlayer = 0;
 let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
+// let size = 4;
 // let boardSize = prompt("Please enter the board size to start the new game: ");
+
 
 function drawBoard() {
   let Parent = document.getElementById("game");
@@ -21,10 +23,10 @@ function drawBoard() {
   }
   let boardSize = prompt("Please enter the board size to start the new game: ");
 
-  for (let s = 0; s < boardSize; s++) {
+  for (let s = 0; s < 4; s++) {
     let row = document.createElement("tr");
 
-    for (let r = 0; r < boardSize; r++) {
+    for (let r = 0; r < 4; r++) {
       let col = document.createElement("td");
       col.id = counter;
 
@@ -39,7 +41,9 @@ function drawBoard() {
           d("player2").classList.add("selected");
         } else {
           this.innerHTML = "O";
+          console.log(this.id);
           player2Selections.push(parseInt(this.id));
+          //   parseInt(Math.random() * arr.length)
           player2Selections.sort(function (a, b) {
             return a - b;
           });
@@ -65,7 +69,7 @@ function drawBoard() {
         } else {
           if (currentPlayer == 0) currentPlayer = 1;
           else currentPlayer = 0;
-          return this.removeEventListener("click", myFunc);
+          return this.removeEventListener("click", myFunc());
         }
       };
 
@@ -127,38 +131,6 @@ function loadAnswers() {
     winners.push([5, 10, 15, 20, 25]);
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
-  // } else if (boardSize > 5) {
-  //   let counting = boardSize - 5;
-  //   //getting first row winning condition
-  //   for (let i = 0; i <= counting; i++) {
-  //     let newArr = [];
-  //     for (let a = 1 + i; a <= 5 + i; a++) {
-  //       newArr.push(a);
-  //     }
-  //     winners.push(newArr);
-  //     // console.log(newArr);
-  //   }
-  //   //trying to get the row winning condition
-  //   for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
-  //     for (let i = 0; i <= counting; i++) {
-  //       let newArr = [];
-  //       for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
-  //         newArr.push(a);
-  //       }
-  //       winners.push(newArr);
-  //       // console.log(newArr);
-  //     }
-  //   }
-//     //getting column winning condition
-//     for (let i = 1; i < boardSize; i++) {
-//       let k = boardSize * (boardSize - 1);
-//       let newArr = [];
-//       for (let j = k; j >= k - boardSize; j--) {
-//         newArr.push(j);
-//       }
-//       winners.push(newArr);
-//       console.log(newArr);
-//     }
   }
 }
 
@@ -171,7 +143,7 @@ function checkWinner() {
   if (currentPlayer == 0) playerSelections = player1Selections;
   else playerSelections = player2Selections;
 
-  if (playerSelections.length >= boardSize) {
+  if (playerSelections.length >= size) {
     // check if any 'winners' are also in your selections
 
     for (let i = 0; i < winners.length; i++) {
@@ -201,9 +173,6 @@ function checkWinner() {
 
       if (setFound == true) {
         win = true;
-        if (playerSelections === player1Selections) {
-          alert("Congratulations! Player 1 won at: " + playerSelections);
-        } else alert("Congratulations! Player 2 won at: " + playerSelections);
         break;
       }
     }
