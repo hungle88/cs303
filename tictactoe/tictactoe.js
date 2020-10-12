@@ -15,11 +15,11 @@ let boardSize = prompt("Please enter the board size to start the new game: ");
 function drawBoard() {
   let Parent = document.getElementById("game");
   let counter = 1;
+  // let boardSize = prompt("Please enter the board size to start the new game: ");
 
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-  // let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");

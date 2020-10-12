@@ -10,7 +10,7 @@ let currentPlayer = 0;
 let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
-let boardSize = prompt("Please enter the board size to start the new game: ");
+let boardSize,
 
 
 function drawBoard() {
@@ -20,7 +20,7 @@ function drawBoard() {
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
-// let boardSize = prompt("Please enter the board size to start the new game: ");
+let boardSize = prompt("Please enter the board size to start the new game: ");
 
   for (let s = 0; s < boardSize; s++) {
     let row = document.createElement("tr");
