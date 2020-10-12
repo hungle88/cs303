@@ -1,31 +1,31 @@
 
-let winners = new Array();
-let player1Selections = new Array();
-let player2Selections = new Array();
-let timer;
-let numberOfPlayers = 2;
-let currentPlayer = 0;
-let move = 0;
-let points1 = 0;    // player 1 points
-let points2 = 0;    // player 2 points
-let size = 4;
+var winners = new Array();
+var player1Selections = new Array();
+var player2Selections = new Array();
+var timer;
+var numberOfPlayers = 2;
+var currentPlayer = 0;
+var move = 0;
+var points1 = 0;    // player 1 points
+var points2 = 0;    // player 2 points
+var size = 4;
 
 function drawBoard() {
-    let Parent = document.getElementById("game");
-    let counter = 1;
+    var Parent = document.getElementById("game");
+    var counter = 1;
     
     while (Parent.hasChildNodes()) {
         Parent.removeChild(Parent.firstChild);
     }
 
     for (s = 0; s < 4; s++) {
-        let row = document.createElement("tr");
+        var row = document.createElement("tr");
         
         for (r = 0; r < 4; r++) {
-            let col = document.createElement("td");
+            var col = document.createElement("td");
             col.id = counter;
 
-            let handler = function(e) {
+            var handler = function(e) {
                 if (currentPlayer == 0) {
                     this.innerHTML = "X";
                     player1Selections.push(parseInt(this.id));
@@ -85,7 +85,7 @@ function drawBoard() {
 
 function d(id)
 {
-    let el = document.getElementById(id);
+    var el = document.getElementById(id);
     return el;
 }
 function reset()
@@ -116,8 +116,8 @@ function loadAnswers()
 function checkWinner() {
     // check if current player has a winning hand
     // only stsrt checking when player x has size number of selections
-    let win = false;
-    let playerSelections = new Array();
+    var win = false;
+    var playerSelections = new Array();
 
     if (currentPlayer == 0)
         playerSelections = player1Selections;
@@ -128,13 +128,13 @@ function checkWinner() {
         // check if any 'winners' are also in your selections
         
         for (i = 0; i < winners.length; i++) {
-            let sets = winners[i];  // winning hand
-            let setFound = true;
+            var sets = winners[i];  // winning hand
+            var setFound = true;
             
             for (r = 0; r < sets.length; r++) {
                 // check if number is in current players hand
                 // if not, break, not winner
-                let found = false;
+                var found = false;
                 
                 // players hand
                 for (s = 0; s < playerSelections.length; s++) {
