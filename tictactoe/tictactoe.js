@@ -127,17 +127,39 @@ function loadAnswers() {
     winners.push([5, 10, 15, 20, 25]);
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
-  } 
-  // else if (boardSize > 5) {
-  //   for (let i = 1; i <= boardSize - 5 + 1; i++) {
-  //     let newArr = [];
-  //     for (let j = i; j <= boardSize - (boardSize - 4) + i; j++) {
-  //       newArr.push(j);
-  //     }
-  //     winners.push(newArr);
-  //   }
-  // }
-  // console.log(winners);
+  } else if (boardSize > 5) {
+    let counting = boardSize - 5;
+    //getting first row winning condition
+    for (let i = 0; i <= counting; i++) {
+      let newArr = [];
+      for (let a = 1 + i; a <= 5 + i; a++) {
+        newArr.push(a);
+      }
+      winners.push(newArr);
+      // console.log(newArr);
+    }
+    //trying to get the row winning condition
+    for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
+      for (let i = 0; i <= counting; i++) {
+        let newArr = [];
+        for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
+          newArr.push(a);
+        }
+        winners.push(newArr);
+        // console.log(newArr);
+      }
+    }
+//     //getting column winning condition
+//     for (let i = 1; i < boardSize; i++) {
+//       let k = boardSize * (boardSize - 1);
+//       let newArr = [];
+//       for (let j = k; j >= k - boardSize; j--) {
+//         newArr.push(j);
+//       }
+//       winners.push(newArr);
+//       console.log(newArr);
+//     }
+  }
 }
 
 function checkWinner() {
@@ -149,7 +171,7 @@ function checkWinner() {
   if (currentPlayer == 0) playerSelections = player1Selections;
   else playerSelections = player2Selections;
 
-  if (playerSelections.length >= boardSize) {
+  if (playerSelections.length >= 5) {
     // check if any 'winners' are also in your selections
 
     for (let i = 0; i < winners.length; i++) {
