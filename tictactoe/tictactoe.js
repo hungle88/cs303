@@ -94,6 +94,18 @@ function reset() {
 }
 
 function loadAnswers() {
+//   for(let i = 0; i < 0; i++) {
+//     for(let k = 0; k <= boardSize * (boardSize-1); k += boardSize){
+//     let newArr =[];
+//     for (let j = 1 + k; j <= boardSize + k; j++){
+//       newArr.push(j);
+//       console.log(j);
+//     }
+//     winners.push(newArr);
+//     console.log(winners);
+//   }
+// }
+
   if (boardSize == 3) {
     winners.push([1, 2, 3]);
     winners.push([4, 5, 6]);
@@ -127,39 +139,40 @@ function loadAnswers() {
     winners.push([5, 10, 15, 20, 25]);
     winners.push([1, 7, 13, 19, 25]);
     winners.push([5, 9, 13, 17, 21]);
-  } else if (boardSize > 5) {
-    let counting = boardSize - 5;
-    //getting first row winning condition
-    for (let i = 0; i <= counting; i++) {
-      let newArr = [];
-      for (let a = 1 + i; a <= 5 + i; a++) {
-        newArr.push(a);
-      }
-      winners.push(newArr);
-      // console.log(newArr);
-    }
-    //trying to get the row winning condition
-    for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
-      for (let i = 0; i <= counting; i++) {
-        let newArr = [];
-        for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
-          newArr.push(a);
-        }
-        winners.push(newArr);
-        // console.log(newArr);
-      }
-    }
-//     //getting column winning condition
-//     for (let i = 1; i < boardSize; i++) {
-//       let k = boardSize * (boardSize - 1);
+  }
+//   else if (boardSize > 5) {
+//     let counting = boardSize - 5;
+//     //getting first row winning condition
+//     for (let i = 0; i <= counting; i++) {
 //       let newArr = [];
-//       for (let j = k; j >= k - boardSize; j--) {
-//         newArr.push(j);
+//       for (let a = 1 + i; a <= 5 + i; a++) {
+//         newArr.push(a);
 //       }
 //       winners.push(newArr);
-//       console.log(newArr);
+//       // console.log(newArr);
 //     }
-  }
+//     //trying to get the row winning condition
+//     for (let j = +boardSize; j < boardSize * boardSize; j += +boardSize) {
+//       for (let i = 0; i <= counting; i++) {
+//         let newArr = [];
+//         for (let a = 1 + i + +j; a <= 5 + i + +j; a++) {
+//           newArr.push(a);
+//         }
+//         winners.push(newArr);
+//         // console.log(newArr);
+//       }
+//     }
+// //     //getting column winning condition
+// //     for (let i = 1; i < boardSize; i++) {
+// //       let k = boardSize * (boardSize - 1);
+// //       let newArr = [];
+// //       for (let j = k; j >= k - boardSize; j--) {
+// //         newArr.push(j);
+// //       }
+// //       winners.push(newArr);
+// //       console.log(newArr);
+// //     }
+  // }
 }
 
 function checkWinner() {
