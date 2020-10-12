@@ -171,7 +171,7 @@ function checkWinner() {
   if (currentPlayer == 0) playerSelections = player1Selections;
   else playerSelections = player2Selections;
 
-  if (playerSelections.length >= 5) {
+  if (playerSelections.length <= 5) {
     // check if any 'winners' are also in your selections
 
     for (let i = 0; i < winners.length; i++) {
