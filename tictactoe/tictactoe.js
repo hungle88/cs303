@@ -94,6 +94,7 @@ function reset() {
 }
 
 function loadAnswers() {
+  //I'm writing codes to generate all the winning results without typing them one by one.
 //   for(let i = 0; i < 0; i++) {
 //     for(let k = 0; k <= boardSize * (boardSize-1); k += boardSize){
 //     let newArr =[];
