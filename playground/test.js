@@ -1,15 +1,21 @@
-class User {
-  constructor(name = "Anonymous") {
+let animal = {
+
+  eats: true
+  
+  };
+  
+  function Dog(name) {
+  
   this.name = name;
+  
+  
+  
   }
-  sayHi() {
-  console.log(`Hello, ${this.name}!`);
-  }}
-  fred = new User();
-  console.log(fred);
-  console.log(fred.__proto__);
-  console.log(User.prototype);
-  fred.sayHi();
-  bob = new User("Bob");
-  console.log(bob);
-  bob.sayHi();
+  
+  
+  
+  let snoopy = new Dog("Snoopy");
+  
+  snoopy= Object.create(animal);
+
+  console.log(snoopy.eats);
