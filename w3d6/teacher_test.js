@@ -7,10 +7,19 @@ describe("teach", function () {
   });
 });
 describe("learn", function () {
-  it("the subject the student is learning", function () {
+  it("the subject the student just learned", function () {
     assert.equal(
       "John just learned Inheritance",
       student.learn("Inheritance")
     );
   });
 });
+
+describe("describe", function () {
+    it("initial name and age", function () {
+      assert.equal(
+        ("Hung, 32 years old."),
+        teacher.describe()
+      );
+    });
+  });
