@@ -1,9 +1,9 @@
 "use strict";
 
 Function.prototype.defer = function (ms) {
-  let f = this;
+//   let f = this;
   return function (...args) {
-    setTimeout(() => f.apply(this, args), ms);
+    setTimeout((this, args), ms);
   };
 };
 
