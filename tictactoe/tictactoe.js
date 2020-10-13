@@ -10,7 +10,7 @@ let currentPlayer = 0;
 let move = 0;
 let points1 = 0; // player 1 points
 let points2 = 0; // player 2 points
-let boardSize = prompt("Please enter the board size to start the new game: ");
+let boardSize = +prompt("Please enter the board size to start the new game: ");
 
 function drawBoard() {
   let Parent = document.getElementById("game");

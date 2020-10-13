@@ -28,4 +28,4 @@ Teacher.prototype.teach = function(subject){
 var teacher = new Teacher();
 
 teacher.initialize("Adam", 45);
-// teacher.teach("Inheritance");
+teacher.teach("Inheritance");
