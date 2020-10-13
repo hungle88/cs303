@@ -1,27 +1,25 @@
-let Person = function() {};
-Person.prototype.initialize = function(name, age)
-{
- this.name = name;
- this.age = age;
+let Person = function () {};
+Person.prototype.initialize = function (name, age) {
+  this.name = name;
+  this.age = age;
 };
-Person.prototype.describe = function()
-{
- return this.name + ", " + this.age + " years old.";
+Person.prototype.describe = function () {
+  return this.name + ", " + this.age + " years old.";
 };
 
-let Student = function() {};
+let Student = function () {};
 Student.prototype = new Person();
-Student.prototype.learn = function(subject)
-{
- console.log(this.name + " just learned " + subject);
+Student.prototype.learn = function (subject) {
+  console.log(this.name + " just learned " + subject);
 };
 
-
-let Teacher = function() {};
+let Teacher = function () {};
 Teacher.prototype = new Person();
-Teacher.prototype.teach = function(subject)
-{
- console.log(this.name + " is teaching " + subject);
+
+Teacher.prototype.teach = function (subject) {
+  let result = this.name + " is now teaching " + subject;
+  console.log(result);
+  return result;
 };
 
 let me = new Student();
