@@ -1,7 +1,7 @@
 "use strict";
 
 function f() {
-  console("Hello!");
+  console.log("Hello!");
 }
 
 Function.prototype.defer = function (ms) {
