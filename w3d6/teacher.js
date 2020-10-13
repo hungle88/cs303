@@ -8,6 +8,7 @@ Person.prototype.describe = function()
 {
  return this.name + ", " + this.age + " years old.";
 };
+
 let Student = function() {};
 Student.prototype = new Person();
 Student.prototype.learn = function(subject)
@@ -26,8 +27,7 @@ Teacher.prototype.teach = function(subject)
 let me = new Student();
 me.initialize("John", 25);
 me.learn("Inheritance");
-console.log(me.describe);
-let someone = new Teacher();
-someone.initialize("Hung", 32);
-someone.teach("Inheritance");
-// console.log(Student.prototype.describe);
+
+let teacher = new Teacher();
+teacher.initialize("Hung", 32);
+teacher.teach("Inheritance");
