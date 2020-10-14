@@ -1,11 +1,13 @@
-class Clock {
-    constructor({ template }) {
-      this.template = template;
-    }
-  
-    let this.counter = 0;
+"use strict";
+
+function Clock(time) {
+  this.time = time;
+}
+Clock.prototype = {
+  start() {
+    let counter = 0;
     if (this.time === "h:m:s") {
-      let this.timer = setInterval(() => {
+      let timer = setInterval(() => {
         let date = new Date();
         let hours = date.getHours();
         let minutes = date.getMinutes();
@@ -21,9 +23,8 @@ class Clock {
         if (counter === 10) clearInterval(timer);
       }, 1000);
     } else return null;
-   
-  }
-  
-  
-  let clock = new Clock({template: 'h:m:s'});
-  clock.start();
+  },
+};
+
+let clock = new Clock("h:m:s");
+clock.start();
