@@ -1,40 +1,38 @@
-"use strict";
-
 class Clock {
-  constructor(time) {
-    this.time = time;
+  constructor({ template }) {
+    this.template = template;
   }
 
-  run() {
-    if (this.time === "h:m:s") {
-      let date = new Date();
-      let hours = date.getHours();
-      let minutes = date.getMinutes();
-      let seconds = date.getSeconds();
+  render() {
+    let date = new Date();
 
-      if (hours < 10) return 0 + hours;
-      if (minutes < 10) return 0 + minutes;
-      if (seconds < 10) return 0 + seconds;
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
 
-      console.log(hours + ":" + minutes + ":" + seconds);
-    } else return null;
-  }
+    let mins = date.getMinutes();
+    if (mins < 10) mins = '0' + mins;
 
-  start() {
-    let counter = 0;
-    this.timer = setInterval(() => {
-      this.run();
-      counter++;
-      if (counter === 10) {
-        this.stop();
-      }
-    }, 1000);
+    let secs = date.getSeconds();
+    if (secs < 10) secs = '0' + secs;
+
+    let output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs);
+
+    console.log(output);
   }
 
   stop() {
     clearInterval(this.timer);
   }
+
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), 1000);
+  }
 }
 
-let clock = new Clock("h:m:s");
+
+let clock = new Clock({template: 'h:m:s'});
 clock.start();
