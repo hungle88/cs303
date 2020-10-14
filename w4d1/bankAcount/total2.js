@@ -73,58 +73,85 @@ class Account {
         return "Account " + this._number + ": balance " + this._balance;
     }
 }
+
+
 "use strict";
 
 /**
  * A Bank Account class
- * 
+ *
  * Extends the basic Account class, adds interest functionality
- * SavingsAccount should have an interest variable, which is set in the 
- * constructor and has a getter and a setter mehtod. It should also have an 
- * addInterest() method which deposits the interest amount into the account. 
- * The calculation for the amount is balance * interest / 100 .
+ * CheckingAccount should have an overdraft limit variable.
+ * The overdraft amount indicates how much a person is allowed to temporarily withdraw beyond what they have.
+ * In other words, it’s the amount that an account is allowed to go into the red (negative balance).
  */
-class SavingsAccount extends Account{
-    /**
-     * Constructor for creating a new SavingsAccount object
-     * 
-     * @param {number} number the number for this account
-     * @param {number} int is the interest rate
-     */
-    constructor(number, int) {
-        super(number);
-        this._interest = int;
-    }
+class CheckingAccount extends Account {
+  /**
+   * Constructor for creating a new SavingsAccount object
+   *
+   * @param {number} number the number for this account
+   * @param {number} int is the interest rate
+   */
+  constructor(number, overdraft) {
+    super(number);
+    this._overdraft = overdraft;
+  }
 
-    /**
-     * @returns {number} the interest rate
-     */
-    getInterest(){
-        return this._interest;
-    }
+  /**
+   * @returns {number} the interest rate
+   */
+  getOverdraft() {
+    return this._overdraft;
+  }
 
-    /**
-     * 
-     * @param {number} newInterest is the new Interest rate
-     * @returns {undefined} resets the interest property
-     */
-    setInterest(newInterest){
-        this._interest = newInterest;
-    }
-    toString() {
-        return "Savings Account: " + this._number + "; balance: " + this._balance + "; interest: " + this._interest;
-      }
-    
-    endOfMonth() {
-        return "Interest added: " + this.addInterest() + " SavingsAccount: " + 
-        this.getNumber() + " balance: " + this.getBalance() + " interest: " + 
-        this.getInterest();
-      }
+  /**
+   *
+   * @param {number} newOverdraft is the new overdraft limit
+   * @returns {undefined} resets the overdraft limit
+   */
+  setOverdraft(newOverdraft) {
+    this._overdraft = newOverdraft;
+  }
 
+  withdraw(amount) {
+    if (amount <= 0) {
+      throw new RangeError("Withdraw amount has to be greater than zero");
     }
+    if (amount > this._balance + this.getOverdraft()) {
+      throw Error("Insufficient funds");
+    }
+    this._balance -= amount;
+  }
 
-    const testSavingsAcc = new SavingsAccount(1234, 3);
-    console.log("interest rate is: ", testSavingsAcc.getInterest());
-    testSavingsAcc.deposit(1000);
-    console.log("balance should be 1000: ", testSavingsAcc.getBalance());
-    console.log(testSavingsAcc);
+  toString() {
+    return (
+      "Checking Account: " +
+      this._number +
+      "; balance: " +
+      this._balance +
+      "; overdraw allowed: " +
+      this.getOverdraft()
+    );
+  }
+
+  endOfMonth() {
+    let warning = "";
+    if (this.getBalance() < 0) warning = "Warning! Your account balance is low.";
+
+    return (
+      warning +
+      "CheckingAccount " +
+      this.getNumber() +
+      ": balance: " +
+      this.getBalance() +
+      " overdraft limit: " +
+      this.getOverdraft()
+    );
+  }
+}
+
+const testCheckingAcc = new CheckingAccount(1234, 500);
+console.log("Overdraft limit is: ", testCheckingAcc.getOverdraft());
+testCheckingAcc.withdraw(1000);
+console.log("balance should be 1000: ", testCheckingAcc.getBalance());
+console.log(testCheckingAcc);

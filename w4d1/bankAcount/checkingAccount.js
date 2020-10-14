@@ -1,49 +1,120 @@
+{
 "use strict";
-
 /**
  * A Bank Account class
- * 
+ *
  * Extends the basic Account class, adds interest functionality
  * CheckingAccount should have an overdraft limit variable.
- * The overdraft amount indicates how much a person is allowed to temporarily withdraw beyond what they have. 
+ * The overdraft amount indicates how much a person is allowed to temporarily withdraw beyond what they have.
  * In other words, it’s the amount that an account is allowed to go into the red (negative balance).
  */
-class CheckingAccount extends Account{
+class CheckingAccount extends Account {
     /**
      * Constructor for creating a new SavingsAccount object
-     * 
+     *
      * @param {number} number the number for this account
      * @param {number} int is the interest rate
      */
-    constructor(number, int) {
-        super(number);
-        this._limit = int;
+    constructor(number, overdraft) {
+      super(number);
+      this._overdraft = overdraft;
     }
-
+  
     /**
      * @returns {number} the interest rate
      */
-    getLimit(){
-        return this._limit;
+    getOverdraft() {
+      return this._overdraft;
     }
-
+  
     /**
-     * 
-     * @param {number} newLimit is the new overdraft limit
+     *
+     * @param {number} newOverdraft is the new overdraft limit
      * @returns {undefined} resets the overdraft limit
      */
-    setLimit(newLimit){
-        this._limit = newLimit;
+    setOverdraft(newOverdraft) {
+      this._overdraft = newOverdraft;
     }
+  
+    withdraw(amount) {
+      if (amount <= 0) {
+        throw new RangeError("Withdraw amount has to be greater than zero");
+      }
+      if (amount > this._balance + this.getOverdraft()) {
+        throw Error("Insufficient funds");
+      }
+      this._balance -= amount;
+    }
+  
+    toString() {
+      return (
+        "Checking Account: " +
+        this._number +
+        "; balance: " +
+        this._balance +
+        "; overdraw allowed: " +
+        this.getOverdraft()
+      );
+    }
+  
+    endOfMonth() {
+      let warning = "";
+      if (this.getBalance() < 0) warning = "Warning! Your balance is low.";
+  
+      return (
+        warning +
+        "CheckingAccount " +
+        this.getNumber() +
+        ": balance: " +
+        this.getBalance() +
+        " overdraft limit: " +
+        this.getOverdraft()
+      );
+    }
+  }
+  
+//   const testCheckingAcc = new CheckingAccount(1234, 500);
+//   console.log("Overdraft limit is: ", testCheckingAcc.getOverdraft());
+//   testCheckingAcc.withdraw(1000);
+//   console.log("balance should be 1000: ", testCheckingAcc.getBalance());
+//   console.log(testCheckingAcc);
 
-addInterest() {
-    return 
+
+
+  describe("Checking Account", function() {
+
+    it("setOverdraft method is working", function() {
+      let account = new CheckingAccount(1234);
+      account.setOverdraft(500);
+      assert.equal(account._overdraft, 500);
+    });
+  
+    it("getOverdraft is method working", function() {
+      let account = new CheckingAccount(1234);
+      account.setOverdraft(500);
+      assert.equal(account.getOverdraft(), 500);
+    });
+  
+    it("withdraw method is working", function() {
+      let account = new CheckingAccount(1234, 100);
+      account.deposit(100);
+      account.withdraw(150);
+      assert.equal(account.getBalance(), -50);
+      account.deposit(200);
+      account.withdraw(50);
+      assert.equal(account.getBalance(), 100);
+      account.deposit(100);
+      account.withdraw(10);
+      assert.equal(account.getBalance(), 190);
+  
+    });
+  
+  
+    it("toString method is working", function() {
+      let account = new CheckingAccount(1234,500);
+      account.deposit(2000);
+      assert.equal(account.toString(), "Checking Account: 1234; balance: 2000; overdraw allowed: 500");
+    });
+  
+  });
 }
-
-    }
-
-    const testCheckingAcc = new CheckingAccount(1234, 3);
-    console.log("Overdraft limit is: ", testCheckingAcc.getLimit());
-    testCheckingAcc.withdraw(1000);
-    console.log("balance should be 1000: ", testCheckingAcc.getBalance());
-    console.log(testCheckingAcc);
