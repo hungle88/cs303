@@ -36,7 +36,9 @@ class CheckingAccount extends Account{
         this._limit = newLimit;
     }
 
-
+addInterest() {
+    return 
+}
 
     }
 

@@ -37,7 +37,9 @@ class SavingsAccount extends Account{
         this._interest = newInterest;
     }
 
-
+addInterest(){
+     
+}
 
     }
 
