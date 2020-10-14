@@ -1,4 +1,4 @@
-
+{
 "use strict";
 
 /**
@@ -34,8 +34,8 @@ class SavingsAccount extends Account {
    * @param {number} newInterest is the new Interest rate
    * @returns {undefined} resets the interest property
    */
-  setInterest(interest) {
-    this._interest = interest;
+  setInterest(newInterest) {
+    this._interest = newInterest;
   }
 
 
@@ -57,17 +57,24 @@ class SavingsAccount extends Account {
   }
 
   endOfMonth() {
-    return "Interest added: " + this.addInterest() + " SavingsAccount " + 
-    this.getNumber() + ": balance: " + this.getBalance() + " interest: " + 
-    this.getInterest();
+    return (
+      "Interest added: " +
+      this.addInterest() +
+      " SavingsAccount: " +
+      this.getNumber() +
+      " balance: " +
+      this.getBalance() +
+      " interest: " +
+      this.getInterest()
+    );
   }
 }
 
-// const testSavingsAcc = new SavingsAccount(1234, 3);
-// console.log("interest rate is: ", testSavingsAcc.getInterest());
-// testSavingsAcc.deposit(1000);
-// console.log("balance should be 1000: ", testSavingsAcc.getBalance());
-// console.log(testSavingsAcc);
+const testSavingsAcc = new SavingsAccount(1234, 3);
+console.log("interest rate is: ", testSavingsAcc.getInterest());
+testSavingsAcc.deposit(1000);
+console.log("balance should be 1000: ", testSavingsAcc.getBalance());
+console.log(testSavingsAcc);
 
 describe("Saving Account", function() {
 
@@ -98,3 +105,4 @@ describe("Saving Account", function() {
     });
   
   });
+}

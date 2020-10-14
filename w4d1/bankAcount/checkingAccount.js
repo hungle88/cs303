@@ -1,4 +1,4 @@
-{
+
 "use strict";
 /**
  * A Bank Account class
@@ -10,7 +10,7 @@
  */
 class CheckingAccount extends Account {
     /**
-     * Constructor for creating a new SavingsAccount object
+     * Constructor for creating a new CheckingAccount object
      *
      * @param {number} number the number for this account
      * @param {number} int is the interest rate
@@ -59,7 +59,7 @@ class CheckingAccount extends Account {
   
     endOfMonth() {
       let warning = "";
-      if (this.getBalance() < 0) warning = "Warning! Your balance is low.";
+      if (this.getBalance() < 0) warning = "Warning! Your account balance is low. ";
   
       return (
         warning +
@@ -117,4 +117,3 @@ class CheckingAccount extends Account {
     });
   
   });
-}
