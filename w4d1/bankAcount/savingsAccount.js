@@ -1,3 +1,6 @@
+/* eslint-disable require-jsdoc */
+/* eslint-disable valid-jsdoc */
+/* eslint-disable no-undef */
 
 "use strict";
 

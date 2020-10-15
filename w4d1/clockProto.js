@@ -1,6 +1,8 @@
+/* eslint-disable require-jsdoc */
 "use strict";
 // Try to refactor the constructor function version to put the shared methods into Clock.prototype?
 
+// eslint-disable-next-line require-jsdoc
 function Clock(time) {
   this.time = time;
 }

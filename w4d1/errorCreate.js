@@ -1,3 +1,5 @@
+/* eslint-disable require-jsdoc */
+/* eslint-disable strict */
 
 //Error creating an instance ===> Fix it ==> Fixed 
 
