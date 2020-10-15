@@ -108,7 +108,7 @@ describe("Bank account", function() {
       assert.equal(account._balance, 1500);
     });
   
-    it("toString method Working", function() {
+    it("toString method is working", function() {
       let account = new Account(1234);
       account.deposit(2000);
       assert.equal(account.toString(), "Account 1234: balance 2000");
