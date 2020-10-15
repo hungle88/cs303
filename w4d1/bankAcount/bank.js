@@ -51,7 +51,7 @@ class Bank {
   }
 }
 
-describe("Bank Class", function () {
+describe("add bank account", function () {
   it("addAccount method is working", function () {
     let account = new Bank();
     let test = new Account(1);
@@ -104,7 +104,7 @@ describe("Bank Class", function () {
   });
 });
 
-describe("endOfMonth Report", function () {
+describe("endOfMonth", function () {
   it("Acount's endOfMonth method is working", function () {
     let test = new Account(1);
     assert.equal(test.endOfMonth(), "");
