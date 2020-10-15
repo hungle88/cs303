@@ -122,7 +122,7 @@ describe("endOfMonth Report", function () {
     );
   });
 
-  it("SavingsAccount endOfMonth Method Working", function () {
+  it("SavingsAccount's endOfMonth method is working", function () {
     let test = new SavingsAccount(2, 2);
     test.deposit(100);
     assert.equal(
@@ -131,7 +131,7 @@ describe("endOfMonth Report", function () {
     );
   });
 
-  it("Bank endOfMonth Method Working", function () {
+  it("Bank's endOfMonth method is working", function () {
     let account = new Bank();
     let testAcc = new Account(1);
     let testChk = new CheckingAccount(2, 1000);
