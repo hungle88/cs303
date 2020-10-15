@@ -1,4 +1,5 @@
 "use strict";
+// Try to refactor the constructor function version to put the shared methods into Clock.prototype?
 
 function Clock(time) {
   this.time = time;

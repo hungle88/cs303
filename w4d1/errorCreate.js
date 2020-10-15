@@ -1,3 +1,6 @@
+
+//Error creating an instance ===> Fix it ==> Fixed 
+
 class Animal {
   constructor(name) {
     this.name = name;
@@ -11,5 +14,5 @@ class Rabbit extends Animal {
   }
 }
 
-let rabbit = new Rabbit("White Rabbit"); // Error: this is not defined
+let rabbit = new Rabbit("White Rabbit"); 
 console.log(rabbit.name);

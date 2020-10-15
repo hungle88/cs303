@@ -1,4 +1,5 @@
 "use strict";
+//Rewrite to class.
 
 class Clock {
   constructor(time) {
