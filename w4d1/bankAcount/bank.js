@@ -23,9 +23,9 @@ class Bank {
 
   closeAccount(number) {
     let output = this.accounts.reduce((accumulator, current, index) =>
-      current.getNumber() === number ? index : accumulator
+      current.getNumber() === number ? index : accumulator, -1
     );
-    if (output === index) this.accounts.splice(output, 1);
+    if (output !== -1) this.accounts.splice(output, 1);
 
     // return this.accounts;
   }
