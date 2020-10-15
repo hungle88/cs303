@@ -92,7 +92,7 @@ class CheckingAccount extends Account {
       assert.equal(account._overdraft, 500);
     });
   
-    it("getOverdraft is method working", function() {
+    it("getOverdraft method is working", function() {
       let account = new CheckingAccount(1234);
       account.setOverdraft(500);
       assert.equal(account.getOverdraft(), 500);

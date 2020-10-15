@@ -86,7 +86,7 @@ describe("Saving Account", function() {
       assert.equal(account.getInterest(), 2.5);
     });
   
-    it("addInterest method is orking", function() {
+    it("addInterest method is working", function() {
       let account = new SavingsAccount(1234);
       account.deposit(100);
       account.setInterest(2.5);
