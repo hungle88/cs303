@@ -77,3 +77,40 @@ class Account {
         return "";
       }
 }
+
+
+
+describe("Bank account", function() {
+
+    it("getNumber method is Working", function() {
+      let account = new Account(1234);
+      assert.equal(account.getNumber(), 1234);
+    });
+  
+    it("getBalance method is working", function() {
+      let account = new Account(1234);
+      account._balance = 2000;
+      assert.equal(account.getBalance(), 2000);
+    });
+  
+    it("deposit method is working", function() {
+      let account = new Account(1234);
+      account.deposit(1000);
+      assert.equal(account._balance, 1000);
+    });
+  
+    it("withdraw method is working", function() {
+      let account = new Account(1234);
+      account._balance = 2000;
+      account.withdraw(500);
+      assert.equal(account._balance, 1500);
+    });
+  
+    it("toString method Working", function() {
+      let account = new Account(1234);
+      account.deposit(2000);
+      assert.equal(account.toString(), "Account 1234: balance 2000");
+    });
+  
+  });
+  
