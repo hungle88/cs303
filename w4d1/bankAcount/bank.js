@@ -147,4 +147,4 @@ describe("endOfMonth Report", function () {
       testSav.endOfMonth();
     assert.equal(account.endOfMonth(), output);
   });
-})
+});
