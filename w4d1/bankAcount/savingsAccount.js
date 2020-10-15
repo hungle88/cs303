@@ -41,10 +41,9 @@ class SavingsAccount extends Account {
     this._interest = interest;
   }
 
-
-  addInterest () {
-    let interest = this.getBalance() * this.getInterest() / 100;
-    if(interest > 0) this.deposit(interest);
+  addInterest() {
+    let interest = (this.getBalance() * this.getInterest()) / 100;
+    if (interest > 0) this.deposit(interest);
     return interest;
   }
 
@@ -60,9 +59,16 @@ class SavingsAccount extends Account {
   }
 
   endOfMonth() {
-    return "Interest added: " + this.addInterest() + " SavingsAccount " + 
-    this.getNumber() + ": balance: " + this.getBalance() + " interest: " + 
-    this.getInterest();
+    return (
+      "Interest added: " +
+      this.addInterest() +
+      " SavingsAccount " +
+      this.getNumber() +
+      ": balance: " +
+      this.getBalance() +
+      " interest: " +
+      this.getInterest()
+    );
   }
 }
 
@@ -72,32 +78,33 @@ class SavingsAccount extends Account {
 // console.log("balance should be 1000: ", testSavingsAcc.getBalance());
 // console.log(testSavingsAcc);
 
-describe("Saving Account", function() {
-
-    it("setInterest method is working", function() {
-      let account = new SavingsAccount(1234);
-      account.setInterest(2);
-      assert.equal(account._interest, 2);
-    });
-  
-    it("getInterest method is working", function() {
-      let account = new SavingsAccount(1234);
-      account.setInterest(2.5);
-      assert.equal(account.getInterest(), 2.5);
-    });
-  
-    it("addInterest method is working", function() {
-      let account = new SavingsAccount(1234);
-      account.deposit(100);
-      account.setInterest(2.5);
-      account.addInterest();
-      assert.equal(account.getBalance(), 102.5);
-    });
-  
-    it("toString method is working", function() {
-      let account = new SavingsAccount(1234,2.5);
-      account.deposit(100);
-      assert.equal(account.toString(), "Savings Account: 1234; balance: 100; interest: 2.5");
-    });
-  
+describe("Saving Account", function () {
+  it("setInterest method is working", function () {
+    let account = new SavingsAccount(1234);
+    account.setInterest(2);
+    assert.equal(account._interest, 2);
   });
+
+  it("getInterest method is working", function () {
+    let account = new SavingsAccount(1234);
+    account.setInterest(2.5);
+    assert.equal(account.getInterest(), 2.5);
+  });
+
+  it("addInterest method is working", function () {
+    let account = new SavingsAccount(1234);
+    account.deposit(100);
+    account.setInterest(2.5);
+    account.addInterest();
+    assert.equal(account.getBalance(), 102.5);
+  });
+
+  it("toString method is working", function () {
+    let account = new SavingsAccount(1234, 2.5);
+    account.deposit(100);
+    assert.equal(
+      account.toString(),
+      "Savings Account: 1234; balance: 100; interest: 2.5"
+    );
+  });
+});
