@@ -22,13 +22,19 @@ class Bank {
   }
 
   closeAccount(number) {
-    for (let i = 0; i < this.accounts.length; i++) {
-      if (this.accounts[i].getNumber() === number) {
-        this.accounts = this.accounts.splice(i, 1);
-        return this.accounts;
-      }
-    }
+    let output = this.accounts.reduce((accumulator, current, index) =>
+      current.getNumber() === number ? index : accumulator
+    );
+    if (output === index) this.accounts.splice(output, 1);
+
+    // return this.accounts;
   }
+  // for (let i = 0; i < this.accounts.length; i++) {
+  //   if (this.accounts[i].getNumber() === number) {
+  //     this.accounts.splice(this.accounts[i], 1);
+  //     // return this.accounts;
+  //   }
+  // }
 
   accountReport() {
     let report = this.accounts.map((acc) => acc.toString());
