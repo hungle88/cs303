@@ -21,6 +21,15 @@ class Bank {
     this.nextNumber += 1;
   }
 
+  closeAccount(number) {
+    for (let i = 0; i < this.accounts.length; i++) {
+      if (this.accounts[i].getNumber() === number) {
+        this.accounts = this.accounts.splice(i, 1);
+        return this.accounts;
+      }
+    }
+  }
+
   accountReport() {
     let report = this.accounts.map((acc) => acc.toString());
     return report.join("\n");
