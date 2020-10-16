@@ -1,6 +1,7 @@
+"use strict";
 const prompt = require('prompt-sync')();
 
-let num = +prompt("Enter a positive integer number: ")
+let num = +prompt("Enter a positive integer number: ");
 let diff, result;
 
 function fib(n) {
