@@ -25,6 +25,7 @@
     "sinon-chai": "^3.5.0"
   },
   "dependencies": {
+    "prompt-sync": "^4.2.0",
     "sinon": "^9.0.3"
   },
   "keywords": [],
