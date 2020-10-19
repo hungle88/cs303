@@ -29,7 +29,7 @@ class Member {
   }
 
   set account(account) {
-    this.account = account;
+    this._account = account;
   }
 
   borrowBook(books) {
