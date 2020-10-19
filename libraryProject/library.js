@@ -1,8 +1,9 @@
 class ApplicationError extends Error {}
 class Member {
-  constructor(name, password) {
+  constructor(name, password, membership) {
     this._name = name;
     this._password = password;
+    this._membership = membership;
   }
 
   get name() {

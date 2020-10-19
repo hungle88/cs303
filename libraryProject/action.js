@@ -39,36 +39,36 @@ function displayInfo() {
   // td2.innerHTML = foodItem.price_in_points;    // row.append(td2);
 }
 
-function makePurchase() {
-  if (!currentStudent) {
-    alert("Please select a student first.");
-    return;
-  }
-  let balance_before_purchase = currentStudent.mealCard.balance;
-  for (let item of shoppingCart) {
-    try {
-      currentStudent.buyFoodItem(item);
-    } catch (e) {
-      if (e instanceof ApplicationError) {
-        alert("Insufficient balance");
-        currentStudent.mealCard.balance = balance_before_purchase;
-        return;
-      }
-    }
-  }
+// function makePurchase() {
+//   if (!currentStudent) {
+//     alert("Please select a student first.");
+//     return;
+//   }
+//   let balance_before_purchase = currentStudent.mealCard.balance;
+//   for (let item of shoppingCart) {
+//     try {
+//       currentStudent.buyFoodItem(item);
+//     } catch (e) {
+//       if (e instanceof ApplicationError) {
+//         alert("Insufficient balance");
+//         currentStudent.mealCard.balance = balance_before_purchase;
+//         return;
+//       }
+//     }
+//   }
 
-  alert(
-    `Thanks for the purchase, your remaining balance is ${currentStudent.mealCard.balance}`
-  );
-  displayInfo();
-  resetShoppingCart();
-}
+//   alert(
+//     `Thanks for the purchase, your remaining balance is ${currentStudent.mealCard.balance}`
+//   );
+//   displayInfo();
+//   resetShoppingCart();
+// }
 
-function resetShoppingCart() {
-  let table = document.getElementById("shopping_cart");
-  let rows = document.querySelectorAll("#shopping_cart>tr");
-  for (let i = rows.length; i > 0; i--) {
-    table.deleteRow(i);
-  }
-  shoppingCart = [];
-}
+// function resetShoppingCart() {
+//   let table = document.getElementById("shopping_cart");
+//   let rows = document.querySelectorAll("#shopping_cart>tr");
+//   for (let i = rows.length; i > 0; i--) {
+//     table.deleteRow(i);
+//   }
+//   shoppingCart = [];
+// }
