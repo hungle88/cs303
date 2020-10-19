@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="action.js"></script>
+    <script src="library.js"></script>
+    <title>MIU Library</title>
+  </head>
+  <body>
+    <h1>Welcome to MIU Library</h1>
+    <label>Please enter your name:</label><br />
+    <input type="text" /><br />
+    <label>Please enter your student ID:</label><br />
+    <input type="text" /><br />
+    <label>Please enter your password:</label><br />
+    <input type="password" /><br />
+    <button onclick="">Login</button>
+    <h2>Books you are borrowing:</h2>
+    <h2>Library's book list:</h2>
+    <button onclick="add(event)" value="javascript"><img src="./images/javascript.jpg" width="245" height="327"></button>    
+    <button onclick="add(event)" value="html"><img src="./images/html.jpg" width="245" height="327"></button>
+    <button onclick="add(event)" value="python"><img src="./images/python.jpg" width="245" height="327"></button>
+    <button onclick="add(event)" value="ios"><img src="./images/ios.jpg" width="245" height="327"></button>
+    <table id="book_selection">
+    <caption>Your book selection:</caption>
+    <tr>
+      <th>Book name</th>
+      <!-- <th>Time</th> -->
+    </tr>
+</table>
+<button onclick="">Complete</button>
+  </body>
+</html>
