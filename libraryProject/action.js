@@ -7,7 +7,7 @@ function add(evt) {
 }
 
 function updateBookSelection(bookItem) {
-  let table = document.getElementById("book_selection");
+  let table = document.getElementById("book_cart");
   let row = document.createElement("tr");
   let td1 = document.createElement("td");
   let td2 = document.createElement("td");
@@ -33,7 +33,7 @@ function updateBookSelection(bookItem) {
 
 function displayInfo() {
   document.getElementById("info").innerHTML = `Hi ${currentStudent.name}`;
-  let table = document.getElementById("book_selection");
+  let table = document.getElementById("book_cart");
   let row = document.createElement("tr");
   // let td2 = document.createElement("td");
   // td2.innerHTML = foodItem.price_in_points;    // row.append(td2);
