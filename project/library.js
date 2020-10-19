@@ -1,5 +1,4 @@
 class ApplicationError extends Error {}
-
 class Member {
   constructor(name, password, membership) {
     this.name = name;
@@ -51,7 +50,6 @@ class Member {
     // }
   }
 }
-
 class membership {
   constructor(type, booksAmount, charge) {
     this.type = type;
@@ -94,83 +92,33 @@ deductCharge(fee) {
 
 }
 
-class Loan {
-  constructor(book, dueDate) {
-    this.book = book;
-    this.dueDate = dueDate;
-  }
-
-  computeCharge(returnDate) {
-    if (returnDate > this.dueDate) {
-      let durationInDays =
-        Math.round(returnDate - this.dueDate) / (1000 * 60 * 60 * 24);
-      let charge = durationInDays * this.book.chargePerDay;
-      return charge > this._maximumCharge ? this._maximumCharge : charge;
-    } else return 0.0;
-  }
-}
-
 class BookItem {
-  constructor(bookName, authorName, isbn) {
+  constructor(bookName, authorName) {
     this.bookName = bookName;
     this.authorName = authorName;
-    this.isbn = isbn;
   }
 }
 
 class Library {
-  constructor(bookItems, members) {
+  constructor(bookItems, students) {
     this.bookItems = bookItems;
-    this.members = members;
+    this.students = students;
   }
 
   addBookItem(newBookItem) {
     this.bookItems.set(newBookItem.name, newBookItem);
   }
-  addMember(newMember) {
-    this.members.set(newMember.name, newMember);
+  addStudent(newStudent) {
+    this.students.set(newStudent.name, newStudent);
   }
 }
 
 const bookItems = new Map();
-bookItems.set(
-  "javascript",
-  new BookItem(
-    "A Smarter Way To Learn Javascript",
-    "Mark Myers",
-    "978-1497408180"
-    
-  )
-);
-bookItems.set(
-  "python",
-  new BookItem(
-    "Automate The Boring Stuff With Python",
-    "Al Sweigart",
-    "978-1593275990"
-    
+bookItems.set("javascript", new BookItem("A Smarter Way To Learn Javascript", "Mark Myers"));
+bookItems.set("python", new BookItem("Automate The Boring Stuff With Python", "Al Sweigart"));
+bookItems.set("html", new BookItem("A Smarter Way To Learn HTML & CSS", "Mark Myers"));
+bookItems.set("ios", new BookItem("Beginning IOS13 & Swift App Development", "Greg Lim"));
 
-  )
-);
-bookItems.set(
-  "html",
-  new BookItem(
-    "A Smarter Way To Learn HTML & CSS",
-    "Mark Myers",
-    "978-1508673873"
-
-  )
-);
-bookItems.set(
-  "ios",
-  new BookItem(
-    "Beginning IOS13 & Swift App Development",
-    "Greg Lim",
-    "978-1670294661"
-
-  )
-);
-
-const members = new Map();
-members.set("John", new Member("John", new Membership()));
-const library = new Library(bookItems, members);
+const students = new Map();
+students.set("John", new Student("John", new StudentAccount()));
+const library = new Library(bookItems, students);

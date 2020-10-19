@@ -66,9 +66,11 @@ class StudentAccount {
 }
 
 class BookItem {
-  constructor(bookName, authorName) {
+  constructor(bookName, authorName, isbn, chargePerDay) {
     this.bookName = bookName;
     this.authorName = authorName;
+    this.isbn = isbn;
+    this.chargePerDay = chargePerDay;
   }
 }
 
@@ -86,12 +88,45 @@ class Library {
   }
 }
 
-const bookItems = new Map();
-bookItems.set("javascript", new BookItem("A Smarter Way To Learn Javascript", "Mark Myers"));
-bookItems.set("python", new BookItem("Automate The Boring Stuff With Python", "Al Sweigart"));
-bookItems.set("html", new BookItem("A Smarter Way To Learn HTML & CSS", "Mark Myers"));
-bookItems.set("ios", new BookItem("Beginning IOS13 & Swift App Development", "Greg Lim"));
 
+const bookItems = new Map();
+bookItems.set(
+  "javascript",
+  new BookItem(
+    "A Smarter Way To Learn Javascript",
+    "Mark Myers",
+    "978-1497408180"
+    
+  )
+);
+bookItems.set(
+  "python",
+  new BookItem(
+    "Automate The Boring Stuff With Python",
+    "Al Sweigart",
+    "978-1593275990"
+
+  )
+);
+bookItems.set(
+  "html",
+  new BookItem(
+    "A Smarter Way To Learn HTML & CSS",
+    "Mark Myers",
+    "978-1508673873"
+
+  )
+);
+bookItems.set(
+  "ios",
+  new BookItem(
+    "Beginning IOS13 & Swift App Development",
+    "Greg Lim",
+    "978-1670294661"
+
+
+  )
+);
 const students = new Map();
-students.set("John", new Student("John", new StudentAccount()));
+// students.set("John", new Student("John", new StudentAccount()));
 const library = new Library(bookItems, students);

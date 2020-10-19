@@ -11,12 +11,10 @@
     <h1>Welcome to MIU Library</h1>
     <label>Please enter your name:</label><br />
     <input type="text" /><br />
-    <label>Please enter your student ID:</label><br />
-    <input type="text" /><br />
     <label>Please enter your password:</label><br />
     <input type="password" /><br />
     <button onclick="">Login</button>
-    <h2>Books you are borrowing:</h2>
+    <h2>Your account informations will show here</h2>
     <h2>Library's book list:</h2>
     <button onclick="add(event)" value="javascript"><img src="./images/javascript.jpg" width="245" height="327"></button>    
     <button onclick="add(event)" value="html"><img src="./images/html.jpg" width="245" height="327"></button>
@@ -25,8 +23,12 @@
     <table id="book_selection">
     <caption>Your book selection:</caption>
     <tr>
-      <th>Book name</th>
-      <th>Author name</th>
+      <th>Book Name</th>
+      <th>Author Name</th>
+      <th>ISBN Number</th>
+      <th>Charge per Day</th>
+
+
     </tr>
 </table>
 <button onclick="">Complete</button>

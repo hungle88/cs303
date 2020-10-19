@@ -11,11 +11,22 @@ function updateBookSelection(bookItem) {
   let row = document.createElement("tr");
   let td1 = document.createElement("td");
   let td2 = document.createElement("td");
+  let td3 = document.createElement("td");
+  let td4 = document.createElement("td");
+
   td1.innerHTML = bookItem.bookName;
   td2.innerHTML = bookItem.authorName;
+  td3.innerHTML = bookItem.isbn;
+  td4.innerHTML = bookItem.chargePerDay;
+
+
 
   row.append(td1);
   row.append(td2);
+  row.append(td3);
+  row.append(td4);
+
+
 
   table.append(row);
 }
